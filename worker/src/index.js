@@ -29,8 +29,16 @@ export default {
       const id = decodeURIComponent(url.pathname.slice('/go/'.length)).replace(/\/$/, '')
       if (!id) return json({ error: 'missing id' }, {}, 400)
 
-      const links = await loadLinks(env)
-      const target = links[id]?.url
+      let links = await loadLinks(env)
+      let target = links[id]?.url
+
+      // キャッシュに無いIDなら、404を返す前に取り直す。
+      // 新しい記事を公開した直後の数分間は、まさにXから人が来る時間帯であり、
+      // キャッシュが古いというだけで取りこぼすのは計測の穴になる。
+      if (!target) {
+        links = await loadLinks(env, { force: true })
+        target = links[id]?.url
+      }
       if (!target) return json({ error: 'unknown id', id }, {}, 404)
 
       // 記録はレスポンスを待たせない。計測のためにユーザーを止めない。
@@ -43,14 +51,14 @@ export default {
   },
 }
 
-async function loadLinks(env) {
+async function loadLinks(env, { force = false } = {}) {
   const cached = await env.CLICKS.get('cache:links', { type: 'json' })
-  if (cached && cached.expiresAt > Date.now()) return cached.links
+  if (!force && cached && cached.expiresAt > Date.now()) return cached.links
 
   try {
-    const res = await fetch(`${env.SITE_BASE}/links.json`, {
-      cf: { cacheTtl: LINKS_TTL_SECONDS, cacheEverything: true },
-    })
+    // エッジキャッシュは使わない。KV で自前にキャッシュしているのに二重にすると、
+    // TTL がずれて「KVは新しいがエッジが古い」状態が生まれ、新規リンクが404を返し続ける。
+    const res = await fetch(`${env.SITE_BASE}/links.json`, { cf: { cacheTtl: 0, cacheEverything: false } })
     if (!res.ok) throw new Error(`links.json ${res.status}`)
     const links = await res.json()
     await env.CLICKS.put(
@@ -66,20 +74,29 @@ async function loadLinks(env) {
   }
 }
 
+// 1クリック = 1キー。カウンタを読んで+1して書く方式は使わない。
+// KV は結果整合性なので、同時クリックが揃って古い値を読み、同じ数字を書き戻して取りこぼす。
+// 実測で3クリックが1件になった。キーを分ければ競合しようがなく、集計は件数を数えるだけで済む。
 async function recordClick(env, id, request) {
   const day = new Date().toISOString().slice(0, 10)
-  const key = `click:${day}:${id}`
-  const current = parseInt((await env.CLICKS.get(key)) || '0', 10)
-  await env.CLICKS.put(key, String(current + 1), { expirationTtl: 60 * 60 * 24 * 400 })
+  const ttl = { expirationTtl: 60 * 60 * 24 * 400 }
+  const uid = crypto.randomUUID()
+  const encId = encodeURIComponent(id)
+
+  // 実測で、5件同時のとき1件が書き込まれなかった。1度だけ入れ直す。
+  // それでも完全ではない。過少計上はありうる前提で読むこと（docs/DESIGN.md 参照）。
+  try {
+    await env.CLICKS.put(`click:${day}:${encId}:${uid}`, '1', ttl)
+  } catch {
+    await env.CLICKS.put(`click:${day}:${encId}:${uid}`, '1', ttl)
+  }
 
   // 参照元は記事単位の当たり外れを見るために残す。個人を特定する情報は保存しない。
   const ref = request.headers.get('referer')
   if (ref) {
     try {
-      const path = new URL(ref).pathname
-      const refKey = `ref:${day}:${id}:${path}`
-      const refCount = parseInt((await env.CLICKS.get(refKey)) || '0', 10)
-      await env.CLICKS.put(refKey, String(refCount + 1), { expirationTtl: 60 * 60 * 24 * 400 })
+      const path = encodeURIComponent(new URL(ref).pathname)
+      await env.CLICKS.put(`ref:${day}:${encId}:${path}:${uid}`, '1', ttl)
     } catch {
       // 参照元が壊れていても計測本体は落とさない
     }
@@ -92,16 +109,16 @@ async function buildStats(env) {
   const byReferrer = {}
   let total = 0
 
+  // キー名を数えるだけ。値を読まないので KV の read も消費しない。
   let cursor
   do {
     const page = await env.CLICKS.list({ prefix: 'click:', cursor })
     for (const k of page.keys) {
-      const [, day, ...rest] = k.name.split(':')
-      const id = rest.join(':')
-      const n = parseInt((await env.CLICKS.get(k.name)) || '0', 10)
-      byDay[day] = (byDay[day] || 0) + n
-      byLink[id] = (byLink[id] || 0) + n
-      total += n
+      const [, day, encId] = k.name.split(':')
+      const id = decodeURIComponent(encId ?? '')
+      byDay[day] = (byDay[day] || 0) + 1
+      byLink[id] = (byLink[id] || 0) + 1
+      total += 1
     }
     cursor = page.list_complete ? undefined : page.cursor
   } while (cursor)
@@ -111,9 +128,8 @@ async function buildStats(env) {
     const page = await env.CLICKS.list({ prefix: 'ref:', cursor: refCursor })
     for (const k of page.keys) {
       const parts = k.name.split(':')
-      const path = parts.slice(3).join(':')
-      const n = parseInt((await env.CLICKS.get(k.name)) || '0', 10)
-      byReferrer[path] = (byReferrer[path] || 0) + n
+      const path = decodeURIComponent(parts[3] ?? '')
+      byReferrer[path] = (byReferrer[path] || 0) + 1
     }
     refCursor = page.list_complete ? undefined : page.cursor
   } while (refCursor)
