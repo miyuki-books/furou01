@@ -1,6 +1,23 @@
 {
   "startedAt": "2026-08-10",
   "experimentDays": 90,
+  "midtermReview": {
+    "date": "2026-09-09",
+    "reported": false,
+    "note": "30日目の中間判定。主判定（自律性）はこの時点でほぼ答えが出る。90日はボーナス判定（入金）のための上限として残してある",
+    "criteria": {
+      "maxHumanCommitsPerWeek": 1,
+      "maxDiscardRate": 0.1,
+      "minDecisions": 4,
+      "minVariableChanges": 1,
+      "minClicks": 1
+    },
+    "actions": {
+      "allPass": "そのまま90日まで継続。追加の手間はゼロ",
+      "tooManyInterventions": "打ち切り。直しても同じことが起きるので、60日追加しても答えは変わらない",
+      "worksButNoClicks": "「作れるが届かない」という結論。流入の作り方を変える別実験に切り替えるか終了する"
+    }
+  },
   "genre": {
     "label": "技術書・ビジネス書",
     "locked": true,
@@ -41,5 +58,7 @@
     "dailyArticles": 1,
     "dailyXPosts": 1,
     "noteKitDayOfWeek": 6
-  }
+  },
+  "startCommit": "7f26da558c0748df35c7f332105d24180a82eeb4",
+  "_startCommitNote": "実験開始時点のコミット。中間判定で人間の介入回数を数える基準に使う（日付基準だとタイムゾーンでずれるため）"
 }

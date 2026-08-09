@@ -21,6 +21,9 @@ jobs:
       halted: ${{ steps.halt.outputs.halted }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # 中間判定で「ai-staff[bot] 以外のコミット数」を数えるため全履歴が要る
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -84,6 +87,14 @@ jobs:
       - name: サイトをビルド
         if: steps.halt.outputs.halted != 'true'
         run: npm run build
+
+      # 判定日を過ぎていて未報告のときだけ動く。集計はコードで行い、AI社員には触らせない。
+      - name: 中間判定（30日目）
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node scripts/midterm.mjs
 
       - name: 変更をコミット
         run: |
