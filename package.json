@@ -1,0 +1,19 @@
+{
+  "name": "furou01",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "自律AI社員の90日実験：観測→仮説→変更→再観測のループを人間の計画外介入なしに回し続ける",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/build.mjs",
+    "note-kit": "node scripts/note-kit.mjs",
+    "notify": "node scripts/notify.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "markdown-it": "^15.0.0"
+  }
+}

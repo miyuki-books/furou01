@@ -1,0 +1,75 @@
+name: 週次 振り返りとnote投稿キット
+
+on:
+  schedule:
+    - cron: '0 22 * * 5' # 金 22:00 UTC = 土 07:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: furou01-weekly
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Claude Code をインストール
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: AI社員を起動（振り返りと戦略更新）
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          claude -p "$(cat prompts/weekly.md)" \
+            --model claude-sonnet-5 \
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(npm run note-kit),Bash(npm run check),Bash(node scripts/notify.mjs:*),Bash(node scripts/discard.mjs:*)" \
+            --permission-mode acceptEdits
+
+      - name: decisions.jsonl に今週の行が追加されたか確認
+        run: |
+          if git diff --quiet -- state/decisions.jsonl; then
+            echo "::warning::state/decisions.jsonl が更新されていません。判断が記録されていない週になります。"
+            node scripts/notify.mjs "週次ジョブ: decisions.jsonl が更新されませんでした。判断が記録されていない週です。"
+          fi
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: 変更をコミット
+        run: |
+          git config user.name "ai-staff[bot]"
+          git config user.email "ai-staff@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "変更なし"
+          else
+            git commit -m "weekly: $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+  on-failure:
+    needs: review
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Slack へ通知
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          node scripts/notify.mjs "週次ジョブが失敗しました: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

@@ -1,0 +1,153 @@
+#!/usr/bin/env node
+// note 投稿キットを生成する。
+//
+// note に公式APIは無く、非公式APIやブラウザ自動操作は規約違反のリスクがある。
+// さらに無人実行では claude.ai のコネクタが使えないため、そもそも自動投稿は成立しない。
+// そこで「人間の操作をコピペ2回とクリック1回まで削る」ことを設計目標にしている。
+//
+// 入力: outbox/note/YYYY-MM-DD.src.md（frontmatter に title、本文はプレーンテキスト）
+// 出力: outbox/note/YYYY-MM-DD.html（ブラウザで開くとボタンが3つ並ぶ）
+//
+//   node scripts/note-kit.mjs [src.md]
+
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
+import { join, basename } from 'node:path'
+import { execFileSync } from 'node:child_process'
+
+const ROOT = new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')
+const DIR = join(ROOT, 'outbox/note')
+
+const explicit = process.argv.slice(2).find((a) => !a.startsWith('--'))
+let src = explicit
+
+if (!src) {
+  if (!existsSync(DIR)) {
+    console.error('outbox/note/ がありません。先に .src.md を用意してください。')
+    process.exit(1)
+  }
+  const candidates = readdirSync(DIR)
+    .filter((f) => f.endsWith('.src.md'))
+    .sort()
+  if (candidates.length === 0) {
+    console.error('outbox/note/ に .src.md がありません。')
+    process.exit(1)
+  }
+  src = join(DIR, candidates[candidates.length - 1])
+}
+
+// 表・コードブロック・脚注・PR表記の検査。note のエディタで崩れるものを弾く。
+try {
+  execFileSync(process.execPath, [join(ROOT, 'scripts/check.mjs'), '--note', src], { stdio: 'inherit' })
+} catch {
+  console.error('\nガードレールに落ちたため投稿キットを生成しませんでした。本文を直してください。')
+  process.exit(1)
+}
+
+const raw = readFileSync(src, 'utf8')
+const fm = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/)
+const title = (fm?.[1].match(/^title:\s*(.*)$/m)?.[1] || '').trim()
+const body = (fm ? raw.slice(fm[0].length) : raw).trim()
+
+if (!title) {
+  console.error(`${src} の frontmatter に title がありません。`)
+  process.exit(1)
+}
+
+const stamp = basename(src).replace(/\.src\.md$/, '')
+const out = join(DIR, `${stamp}.html`)
+
+const esc = (s) =>
+  String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+
+const html = `<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>note 投稿キット ${esc(stamp)}</title>
+<style>
+  :root { --bg:#fdfdfc; --fg:#1c1b19; --muted:#6b6862; --rule:#e3e0da; --accent:#1f5f8b; --ok:#2f7d4f; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#161614; --fg:#e8e6e1; --muted:#9a968e; --rule:#33322e; --accent:#7fb5d9; --ok:#6fbf8f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:2rem 1.25rem 4rem; background:var(--bg); color:var(--fg);
+         font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",system-ui,sans-serif; line-height:1.8; }
+  main { max-width: 46rem; margin: 0 auto; }
+  h1 { font-size:1.15rem; margin:0 0 .25rem; }
+  .stamp { color:var(--muted); font-size:.82rem; margin-bottom:2rem; }
+  ol.steps { list-style:none; counter-reset:s; padding:0; margin:0; }
+  ol.steps > li { counter-increment:s; border:1px solid var(--rule); border-radius:8px;
+                  padding:1.1rem 1.25rem; margin-bottom:1rem; }
+  ol.steps > li::before { content:counter(s); display:inline-flex; align-items:center; justify-content:center;
+    width:1.5rem; height:1.5rem; border-radius:50%; background:var(--accent); color:#fff;
+    font-size:.8rem; font-weight:700; margin-right:.6rem; vertical-align:-.3rem; }
+  .label { font-weight:600; }
+  button, a.btn { display:inline-block; margin-top:.9rem; padding:.6rem 1.1rem; font-size:.92rem;
+    font-family:inherit; border:1px solid var(--accent); background:var(--accent); color:#fff;
+    border-radius:6px; cursor:pointer; text-decoration:none; }
+  button:hover, a.btn:hover { opacity:.88; }
+  button.done { background:var(--ok); border-color:var(--ok); }
+  pre { background:transparent; border:1px solid var(--rule); border-radius:6px; padding:.9rem 1rem;
+        white-space:pre-wrap; word-break:break-word; font-family:inherit; font-size:.9rem;
+        max-height:22rem; overflow:auto; margin:.9rem 0 0; }
+  .hint { color:var(--muted); font-size:.82rem; margin-top:.5rem; }
+  .warn { border-left:3px solid var(--accent); padding-left:.9rem; color:var(--muted);
+          font-size:.85rem; margin-top:2rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>note 投稿キット</h1>
+  <div class="stamp">${esc(stamp)}</div>
+
+  <ol class="steps">
+    <li>
+      <span class="label">タイトルをコピー</span>
+      <pre id="title">${esc(title)}</pre>
+      <button data-copy="title">タイトルをコピー</button>
+    </li>
+    <li>
+      <span class="label">本文をコピー</span>
+      <pre id="body">${esc(body)}</pre>
+      <button data-copy="body">本文をコピー</button>
+      <div class="hint">note のエディタに<strong>一括で</strong>貼り付けてください。分割して貼ると見出しの変換が崩れます。</div>
+    </li>
+    <li>
+      <span class="label">note を開いて貼り、公開する</span>
+      <div class="hint">新規ノート作成画面が新しいタブで開きます。</div>
+      <a class="btn" href="https://note.com/notes/new" target="_blank" rel="noopener">note の新規投稿を開く</a>
+    </li>
+  </ol>
+
+  <div class="warn">
+    本文にアフィリエイトリンクは含まれていません（導線のみ）。PR表記は本文に入っています。<br>
+    見出し画像は設定不要です。
+  </div>
+</main>
+
+<script>
+  for (const btn of document.querySelectorAll('button[data-copy]')) {
+    btn.addEventListener('click', async () => {
+      const text = document.getElementById(btn.dataset.copy).textContent
+      try {
+        await navigator.clipboard.writeText(text)
+      } catch {
+        const r = document.createRange()
+        r.selectNodeContents(document.getElementById(btn.dataset.copy))
+        const s = getSelection(); s.removeAllRanges(); s.addRange(r)
+        document.execCommand('copy')
+      }
+      const label = btn.textContent
+      btn.textContent = 'コピーしました'
+      btn.classList.add('done')
+      setTimeout(() => { btn.textContent = label; btn.classList.remove('done') }, 1600)
+    })
+  }
+</script>
+</body>
+</html>
+`
+
+writeFileSync(out, html, 'utf8')
+console.log(`投稿キットを生成しました: ${out}`)

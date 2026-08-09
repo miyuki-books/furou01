@@ -1,0 +1,7 @@
+{
+  "_comment": "アフィリエイトリンクの定義。AI社員が記事を書くときにここへ追加する。記事側は /go/<キー> でリンクする。ビルド時に site/links.json へコピーされ、Worker がそこを読む。",
+  "_example": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/xxxxxxxx/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F00000000%2F",
+    "label": "例：書名（このキーは削除してよい）"
+  }
+}

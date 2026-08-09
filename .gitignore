@@ -1,0 +1,10 @@
+node_modules/
+site/
+
+# ローカル環境のパス（Windowsのユーザー名）が入るため public リポジトリには出さない
+.claude/settings.local.json
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store

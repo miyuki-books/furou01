@@ -1,0 +1,43 @@
+{
+  "startedAt": null,
+  "experimentDays": 90,
+  "genre": {
+    "label": "技術書・ビジネス書",
+    "locked": true,
+    "note": "人間が固定。AI社員は変更禁止。横展開は閾値到達時に人間が承認する"
+  },
+  "operatingVariables": {
+    "themeStrategy": {
+      "current": "読者の課題起点（「〜したい人向け」で切る）",
+      "changedAt": null,
+      "note": "操作変数1。週次でのみ変更する"
+    },
+    "titlePattern": {
+      "current": "目的 + 冊数（例：「設計を学び直したい人向けの3冊」）",
+      "changedAt": null,
+      "note": "操作変数2。週次でのみ変更する"
+    }
+  },
+  "expansionThreshold": {
+    "cumulativeClicks": 30,
+    "monthlyPageviews": 500,
+    "action": "到達したら Slack へ通知して停止。ジャンル追加はAI社員が実行してはいけない"
+  },
+  "amazonAssociates": {
+    "registered": false,
+    "note": "登録すると180日以内に適格販売3件が必要。登録判断はAI社員が行ってはいけない"
+  },
+  "links": {
+    "allowedAffiliateHosts": [
+      "hb.afl.rakuten.co.jp",
+      "af.moshimo.com"
+    ],
+    "redirectorBase": "https://REPLACE-ME.workers.dev",
+    "siteBase": "https://REPLACE-ME.github.io"
+  },
+  "posting": {
+    "dailyArticles": 1,
+    "dailyXPosts": 1,
+    "noteKitDayOfWeek": 6
+  }
+}

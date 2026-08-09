@@ -1,0 +1,15 @@
+name = "furou01-go"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# GitHub Pages のURL。links.json をここから読む。
+# SETUP.md の手順で実際のURLに置き換えること。
+[vars]
+SITE_BASE = "https://REPLACE-ME.github.io/furou01"
+
+# クリック数を保存する KV。
+# 作成: npx wrangler kv namespace create CLICKS
+# 出力された id をここに貼る。
+[[kv_namespaces]]
+binding = "CLICKS"
+id = "REPLACE-ME"
