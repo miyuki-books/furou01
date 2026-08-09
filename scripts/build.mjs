@@ -197,7 +197,11 @@ for (const file of files) {
   const title = meta.title || slug
   const date = meta.date || file.slice(0, 10)
 
-  const rendered = rewriteGoLinks(md.render(body))
+  // 本文冒頭の見出しは落とす。frontmatter の title から <h1> を出しているので、
+  // AI社員が本文にも「# タイトル」を書くと同じ見出しが2つ並び、H1も2つになる。
+  // 指示書で禁じるより、ここで機械的に落とすほうが確実（実際に3本とも二重になっていた）。
+  const bodyWithoutLeadHeading = body.replace(/^\s*#\s+.*\r?\n+/, '')
+  const rendered = rewriteGoLinks(md.render(bodyWithoutLeadHeading))
   const description = body
     .replace(/^\s*\[PR\]\s*$/m, '')
     .replace(/[#*>\-\[\]]/g, '')
