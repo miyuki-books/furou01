@@ -75,9 +75,6 @@ jobs:
       # AI社員にURLを組み立てさせない（捏造の余地を作らない）。
       - name: アフィリエイトリンクを生成
         if: steps.halt.outputs.halted != 'true'
-        env:
-          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
-          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
         run: npm run links
 
       - name: ガードレール（AI社員の申告を信用せず、ここでもう一度通す）

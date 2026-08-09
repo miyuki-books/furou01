@@ -4,23 +4,33 @@
 //
 // AI社員にURLを組み立てさせない。組み立てさせれば必ず捏造が混じるし、
 // 手で作って貼るなら毎日人間の作業が発生して「人間の手間ほぼゼロ」が崩れる。
-// 楽天ブックス書籍検索APIは ISBN を渡すと affiliateUrl をそのまま返すので、それを使う。
 //
-// リンクのキーは ISBN そのもの。記事側は [書名](/go/9784274224546) と書けばよい。
+// 楽天ウェブサービスのAPIは使わない。2026年の仕様変更で Referer 必須になり、
+// サーバーからの呼び出しは 403 REQUEST_CONTEXT_BODY_HTTP_REFERRER_MISSING で弾かれる。
+// Referer を偽装すれば通るが、それはアクセス制御の回避なので行わない。
+// 代わりに、楽天アフィリエイトの「URLを入力してリンクを作成」が生成するのと
+// 同じ形式のURLを組み立てる。書名は openBD から取る。
 //
-//   RAKUTEN_APP_ID=... RAKUTEN_AFFILIATE_ID=... node scripts/links.mjs
+//   node scripts/links.mjs
 
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
 import { join, extname } from 'node:path'
 
 const ROOT = new URL('..', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')
 const LINKS_PATH = join(ROOT, 'state/links.json')
-const API = 'https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404'
+const CONFIG_PATH = join(ROOT, 'state/config.json')
 
-const appId = process.env.RAKUTEN_APP_ID
-const affiliateId = process.env.RAKUTEN_AFFILIATE_ID
+const config = JSON.parse(readFileSync(CONFIG_PATH, 'utf8'))
+const affiliateId = process.env.RAKUTEN_AFFILIATE_ID || config.links.rakutenAffiliateId
 
-// frontmatter から books: を集める
+// 楽天アフィリエイトが「URLを入力してリンクを作成」で生成する形式に合わせる。
+// ut は Base64 で {"page":"url","type":"hybrid_url","col":1} を表す固定値。
+const UT = 'eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9'
+const bookUrl = (isbn) => `https://books.rakuten.co.jp/search?sitem=${isbn}&g=001`
+const affiliateUrl = (isbn) =>
+  `https://hb.afl.rakuten.co.jp/hgc/${affiliateId}/?pc=${encodeURIComponent(bookUrl(isbn))}` +
+  `&link_type=hybrid_url&ut=${UT}`
+
 function collectIsbns() {
   const dir = join(ROOT, 'content')
   if (!existsSync(dir)) return []
@@ -50,50 +60,40 @@ if (missing.length === 0) {
   process.exit(0)
 }
 
-if (!appId || !affiliateId) {
-  // 未設定でも落とさない。アフィリエイトリンクが無い記事として公開されるだけで、
+if (!affiliateId || affiliateId.includes('REPLACE-ME')) {
+  // 未設定でも落とさない。アフィリエイトリンクの無い記事として公開されるだけで、
   // 規約違反にも事実誤認にもならない。ただし黙って進めない。
-  console.warn('RAKUTEN_APP_ID / RAKUTEN_AFFILIATE_ID が未設定のため、リンクを生成せず終了します。')
+  console.warn('アフィリエイトIDが未設定のため、リンクを生成せず終了します。')
+  console.warn('state/config.json の links.rakutenAffiliateId を設定してください。')
   console.warn(`未登録のまま: ${missing.join(', ')}`)
   process.exit(0)
 }
 
-let added = 0
-const failed = []
+// 書名は openBD から取る（無料・認証不要）。取れなくてもリンク自体は作れる。
+let labels = {}
+try {
+  const res = await fetch(`https://api.openbd.jp/v1/get?isbn=${missing.join(',')}`)
+  if (res.ok) {
+    const records = await res.json()
+    missing.forEach((isbn, i) => {
+      const s = records[i]?.summary
+      if (s) labels[isbn] = { title: s.title, author: s.author || '', publisher: s.publisher || '' }
+    })
+  }
+} catch (e) {
+  console.warn(`openBD から書名を取得できませんでした（${e.message}）。ラベルなしで続行します。`)
+}
 
 for (const isbn of missing) {
-  const url = `${API}?format=json&isbn=${isbn}&applicationId=${encodeURIComponent(appId)}&affiliateId=${encodeURIComponent(affiliateId)}`
-  try {
-    const res = await fetch(url)
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    const data = await res.json()
-    const item = data?.Items?.[0]?.Item
-    if (!item?.affiliateUrl) throw new Error('affiliateUrl が返らなかった')
-
-    links[isbn] = {
-      url: item.affiliateUrl,
-      label: item.title,
-      author: item.author || '',
-      publisher: item.publisherName || '',
-      addedAt: new Date().toISOString().slice(0, 10),
-    }
-    added++
-    console.log(`  + ${isbn}  ${item.title}`)
-  } catch (e) {
-    failed.push(`${isbn}: ${e.message}`)
-    console.warn(`  ! ${isbn}  取得できず (${e.message})`)
+  links[isbn] = {
+    url: affiliateUrl(isbn),
+    label: labels[isbn]?.title || isbn,
+    author: labels[isbn]?.author || '',
+    publisher: labels[isbn]?.publisher || '',
+    addedAt: new Date().toISOString().slice(0, 10),
   }
-  // 楽天APIは秒間1リクエストの制限がある
-  await new Promise((r) => setTimeout(r, 1200))
+  console.log(`  + ${isbn}  ${links[isbn].label}`)
 }
 
-if (added > 0) {
-  writeFileSync(LINKS_PATH, JSON.stringify(links, null, 2) + '\n', 'utf8')
-  console.log(`\nstate/links.json に ${added} 件を追加しました。`)
-}
-
-if (failed.length) {
-  console.warn(`\n取得できなかった ISBN: ${failed.length} 件`)
-  for (const f of failed) console.warn(`  ${f}`)
-  console.warn('該当の本はアフィリエイトリンクなしで公開されます（記事自体は問題ありません）。')
-}
+writeFileSync(LINKS_PATH, JSON.stringify(links, null, 2) + '\n', 'utf8')
+console.log(`\nstate/links.json に ${missing.length} 件を追加しました。`)

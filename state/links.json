@@ -1,3 +1,45 @@
 {
-  "_comment": "アフィリエイトリンクの定義。AI社員が記事を書くときにここへ追加する。記事側は /go/<キー> でリンクする。ビルド時に site/links.json へコピーされ、Worker がそこを読む。キーに : を含めないこと（計測キーの区切りに使っている）。"
+  "_comment": "アフィリエイトリンクの定義。AI社員が記事を書くときにここへ追加する。記事側は /go/<キー> でリンクする。ビルド時に site/links.json へコピーされ、Worker がそこを読む。キーに : を含めないこと（計測キーの区切りに使っている）。",
+  "9784798157825": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798157825%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "達人に学ぶSQL徹底指南書 : 初級者で終わりたくないあなたへ",
+    "author": "ミック",
+    "publisher": "翔泳社",
+    "addedAt": "2026-08-09"
+  },
+  "9784873114262": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784873114262%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "実践ハイパフォーマンスMySQL",
+    "author": "Schwartz,Baron Zaitsev,Peter Tkachenko,Vadim ほか",
+    "publisher": "オーム社",
+    "addedAt": "2026-08-09"
+  },
+  "9784873119540": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784873119540%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "詳説データベース : ストレージエンジンと分散データシステムの仕組み",
+    "author": "Petrov,Alex 小林,隆浩 成田,昇司",
+    "publisher": "オーム社 (発売)",
+    "addedAt": "2026-08-09"
+  },
+  "9784274224546": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784274224546%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "リファクタリング : 既存のコードを安全に改善する",
+    "author": "Fowler,Martin,1963- 児玉,公信 友野,晶夫 平澤,章,1961-",
+    "publisher": "オーム社",
+    "addedAt": "2026-08-09"
+  },
+  "9784798116839": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798116839%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "レガシーコード改善ガイド : 保守開発のためのリファクタリング",
+    "author": "Feathers,MichaelC 平澤,章,1961- 越智,典子 稲葉,信之 ウルシステムズ株式会社",
+    "publisher": "翔泳社",
+    "addedAt": "2026-08-09"
+  },
+  "9784274226298": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784274226298%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "達人プログラマー : 熟達に向けたあなたの旅",
+    "author": "Thomas,David,1956- Hunt,Andrew,1964- 村上,雅章,1960-",
+    "publisher": "オーム社",
+    "addedAt": "2026-08-09"
+  }
 }

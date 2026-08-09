@@ -156,24 +156,29 @@ node -e "['health','stats.json','go/nonexistent'].forEach(p=>fetch('https://<wor
 > 「複数のアカウントを作成しまたは保有する行為」が挙げられています。既存アカウントを使います。
 > これは「表示名の分離」であって「主体の匿名化」ではない、という設計（A9）と整合します。
 
-### ⑦-2 楽天ウェブサービスのアプリIDを取得する
+### ⑦-2 アフィリエイトIDを取得する
 
 **これが無いと、AI社員はアフィリエイトリンクを自力で作れません。**
 手作業でリンクを貼るなら毎日人間の作業が発生し、「人間の手間ほぼゼロ」が崩れます。
 
-1. https://webservice.rakuten.co.jp/ でアプリIDを発行する（無料）
-   - アプリ名：任意（例：本の地図）
-   - アプリURL：`https://miyuki-books.github.io/furou01`
-2. 楽天アフィリエイトのマイページで**アフィリエイトID**を確認する
-3. GitHub Secrets に登録する
+1. 楽天アフィリエイトのページ上部「**URLを入力してリンクを作成**」に、任意の楽天ブックスURLを入れてリンクを1本作る
+2. 生成された `https://hb.afl.rakuten.co.jp/hgc/<ここ>/?pc=...` の **`<ここ>`** の部分がアフィリエイトID
+3. `state/config.json` の `links.rakutenAffiliateId` に設定する
 
-```bash
-gh secret set RAKUTEN_APP_ID --repo <ユーザー名>/furou01
-gh secret set RAKUTEN_AFFILIATE_ID --repo <ユーザー名>/furou01
-```
+> **楽天ウェブサービス（webservice.rakuten.co.jp）は使いません。**
+> 2026年の仕様変更で Referer が必須になり、サーバーからの呼び出しは
+> `403 REQUEST_CONTEXT_BODY_HTTP_REFERRER_MISSING` で弾かれます。
+> Referer を偽装すれば通りますが、それはアクセス制御の回避なので行いません。
+>
+> **管理画面に表示される「Affiliate ID」は、実際のリンクに使われるIDと別物です。**
+> 必ず「URLを入力してリンクを作成」が生成した実物から取ってください。
+> 推測で組み立てると、報酬が計上されないリンクを量産します。
+>
+> このIDは公開記事のリンクに必ず含まれるため秘密情報ではありません。
+> GitHub Secrets ではなく設定ファイルに置いています。
 
-これで `npm run links` が、記事の frontmatter にある ISBN から
-楽天ブックス書籍検索API 経由でアフィリエイトURLを取得し、`state/links.json` を更新します。
+`npm run links` が、記事の frontmatter にある ISBN からリンクを組み立て、
+書名は openBD から取って `state/links.json` を更新します。
 **AI社員はURLを組み立てません**（捏造の余地を作らないため）。
 
 **Amazon アソシエイトはまだ登録しないでください。**

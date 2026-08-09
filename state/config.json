@@ -32,6 +32,8 @@
       "hb.afl.rakuten.co.jp",
       "af.moshimo.com"
     ],
+    "rakutenAffiliateId": "114539e4.67b666c8.114539e5.5f800e0e",
+    "_rakutenAffiliateIdNote": "楽天アフィリエイトの「URLを入力してリンクを作成」が生成したリンクから取った値。楽天ウェブサービス管理画面に表示されるIDとは別物なので注意。公開リンクに必ず含まれるため秘密情報ではない",
     "redirectorBase": "https://furou01-go.miyuki20260809.workers.dev",
     "siteBase": "https://miyuki-books.github.io/furou01"
   },
