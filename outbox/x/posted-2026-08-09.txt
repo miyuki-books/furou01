@@ -1,1 +1,1 @@
-マイクロサービス化、Clean Architecture、ドメイン駆動設計。大規模なシステムを段階的に設計するための3冊を、どう読み合わせるかで紹介しています。サービス分割から内部構造まで、スケーリングの各段階で参照できる選書ガイド。 https://miyuki-books.github.io/furou01/system-design-3books.html
+API設計は一度決まると変更コストが劇的に増えます。マイクロサービス時代のバックエンド開発者が押さえるべき、仕様ファースト・アプローチからセキュリティ設計までの3冊。 https://miyuki-books.github.io/furou01/api-design-3books.html
