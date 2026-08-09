@@ -1,7 +1,7 @@
 {
   "consecutiveFailures": 0,
-  "lastSuccessfulRun": null,
-  "lastRunStatus": null,
+  "lastSuccessfulRun": "2026-08-09",
+  "lastRunStatus": "ok",
   "blockedArticles": {},
   "halted": false,
   "haltReason": null,

@@ -1,0 +1,3 @@
+既存コードを直す怖さからの脱出。リファクタリング本は目的別に分かれている。テストが無い状態から始めるのか、テストがあって設計を良くしたいのか。自分の段階で違う3冊。
+
+https://miyuki-books.github.io/furou01/refactoring-3books.html
