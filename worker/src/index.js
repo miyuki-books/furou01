@@ -42,13 +42,30 @@ export default {
       if (!target) return json({ error: 'unknown id', id }, {}, 404)
 
       // 記録はレスポンスを待たせない。計測のためにユーザーを止めない。
-      ctx.waitUntil(recordClick(env, id, request))
+      // ボットは数えない。月間クリックが数件の規模では、クローラー1件が
+      // 「増えた/減った」の判断をひっくり返してしまう。
+      if (!isBot(request)) ctx.waitUntil(recordClick(env, id, request))
 
       return Response.redirect(target, 302)
     }
 
     return json({ error: 'not found' }, {}, 404)
   },
+}
+
+// リダイレクトは誰にでも返す（ボットにも正しい行き先を返す）が、計測には数えない。
+//
+// 「怪しいUAを弾く」ブロックリストではなく「ブラウザらしいUAだけ数える」許可リストにする。
+// ブロックリストは想定外のUAを取りこぼす（実際に Node のデフォルトUAがすり抜けた）。
+// 数えたいのは人間のクリックだけなので、既定を「数えない」に倒すほうが素直で安全側に外れる。
+const BOT_UA = /bot|crawl|spider|slurp|scrape|preview|monitor|curl|wget|python|java|go-http|okhttp|axios|fetch|undici|headless|lighthouse|pingdom|uptime|facebookexternalhit|embed/i
+const BROWSER_ENGINE = /(Chrome|CriOS|Safari|Firefox|FxiOS|Edg|EdgiOS|OPR|Version)\//
+
+function isBot(request) {
+  const ua = request.headers.get('user-agent') || ''
+  if (!ua.startsWith('Mozilla/')) return true
+  if (!BROWSER_ENGINE.test(ua)) return true
+  return BOT_UA.test(ua)
 }
 
 async function loadLinks(env, { force = false } = {}) {
