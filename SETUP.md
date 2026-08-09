@@ -116,7 +116,19 @@ npx wrangler kv namespace create CLICKS
 npx wrangler deploy
 ```
 
+初回は workers.dev サブドメインの登録を求められます。ダッシュボードで最初の Worker を作ると
+自動で割り当てられるので、それを済ませてから deploy し直してください。
+
 発行された `https://furou01-go.<サブドメイン>.workers.dev` を控えます。
+
+デプロイ後、3つとも応答することを確認してください。
+
+```bash
+node -e "['health','stats.json','go/nonexistent'].forEach(p=>fetch('https://<worker>/'+p,{redirect:'manual'}).then(r=>console.log(p,r.status)))"
+```
+
+`/health` が 200、`/stats.json` が 200、`/go/nonexistent` が 404 なら正常です。
+新しい Worker は DNS の伝播に数分かかることがあるので、繋がらなければ少し待って再試行してください。
 
 > **なぜ**：**これが無いと自己改善ループが閉じません。**
 > GA4 も楽天のレポート画面も認証が必要で、無人の AI社員は自力で数字を取れません。
