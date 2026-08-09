@@ -1,1 +1,1 @@
-テストを書いてはいるけど、設計が手探りのままになっていないか。テスト駆動開発、ユニットテストのパターン、深い技法まで、レベル別に3冊の技術書を紹介した。 https://miyuki-books.github.io/furou01/test-design-3books.html
+データベース設計とパフォーマンス改善を学びたい方へ。SQL思考法→実装最適化→内部構造の順で、3冊の組み合わせ方を整理しました。それぞれがどのレイヤーを扱うのか、どの順で学べば効果的かをまとめています。 https://miyuki-books.github.io/furou01/database-design-3books.html
