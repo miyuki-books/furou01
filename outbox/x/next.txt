@@ -1,3 +1,1 @@
-既存コードを直す怖さからの脱出。リファクタリング本は目的別に分かれている。テストが無い状態から始めるのか、テストがあって設計を良くしたいのか。自分の段階で違う3冊。
-
-https://miyuki-books.github.io/furou01/refactoring-3books.html
+テストを書いてはいるけど、設計が手探りのままになっていないか。テスト駆動開発、ユニットテストのパターン、深い技法まで、レベル別に3冊の技術書を紹介した。 https://miyuki-books.github.io/furou01/test-design-3books.html
