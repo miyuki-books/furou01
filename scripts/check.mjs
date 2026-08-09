@@ -69,6 +69,9 @@ const AFFILIATE_HOSTS = [
 
 const AI_SMELL_THRESHOLD = 5
 
+// 書誌検証に使う。無料・認証不要・日本の書誌データ。
+const OPENBD_ENDPOINT = 'https://api.openbd.jp/v1/get?isbn='
+
 // ---------------------------------------------------------------- ユーティリティ
 
 function collectMarkdown(dir) {
@@ -82,10 +85,27 @@ function collectMarkdown(dir) {
   return out
 }
 
-function stripFrontmatter(text) {
-  const m = text.match(/^---\r?\n[\s\S]*?\r?\n---\r?\n/)
-  if (!m) return { body: text, offset: 0 }
-  return { body: text.slice(m[0].length), offset: m[0].split('\n').length - 1 }
+function stripFrontmatter(raw) {
+  // BOM が付いていると frontmatter を丸ごと見落とし、書誌の申告が無いのに素通りしかねない
+  const text = raw.replace(/^﻿/, '')
+  const m = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/)
+  if (!m) return { body: text, meta: {} }
+
+  const meta = {}
+  for (const line of m[1].split(/\r?\n/)) {
+    const kv = line.match(/^(\w+):\s*(.*)$/)
+    if (!kv) continue
+    let value = kv[2].trim()
+    if (value.startsWith('[') && value.endsWith(']')) {
+      value = value
+        .slice(1, -1)
+        .split(',')
+        .map((s) => s.trim().replace(/^["']|["']$/g, ''))
+        .filter(Boolean)
+    }
+    meta[kv[1]] = value
+  }
+  return { body: text.slice(m[0].length), meta }
 }
 
 function lineOf(body, index) {
@@ -193,6 +213,77 @@ function checkNoteFormat(body, violations) {
   })
 }
 
+// 書誌の実在確認。
+//
+// 文体チェックは事実誤認を検出できない。実際に、実在しない邦題を書いた記事が
+// 他の全ルールを通過して公開された。指標3（事実誤認による削除率）は主判定のひとつなので、
+// ここもコードで担保する。
+//
+// frontmatter の books: に ISBN13 を並べさせ、openBD に実在を問い合わせ、
+// 返ってきた正式書名が本文に現れているかを照合する。
+async function checkBibliography(meta, body, violations) {
+  const isbns = (Array.isArray(meta.books) ? meta.books : meta.books ? [meta.books] : [])
+    .map((s) => String(s).replace(/[-\s]/g, ''))
+    .filter(Boolean)
+
+  if (isbns.length === 0) {
+    violations.push({
+      line: 1,
+      rule: '書誌の申告がない',
+      detail:
+        'frontmatter に books: [ISBN13, ...] が必要。扱う本の ISBN を並べること。' +
+        '実在確認ができない本は扱わない（職務規程 3.）。',
+    })
+    return
+  }
+
+  const bad = isbns.filter((i) => !/^97[89]\d{10}$/.test(i))
+  if (bad.length) {
+    violations.push({
+      line: 1,
+      rule: 'ISBN13の形式が不正',
+      detail: `${bad.join(', ')} — 978/979 で始まる13桁で書くこと。`,
+    })
+    return
+  }
+
+  let records
+  try {
+    const res = await fetch(OPENBD_ENDPOINT + isbns.join(','))
+    if (!res.ok) throw new Error(`openBD ${res.status}`)
+    records = await res.json()
+  } catch (e) {
+    // 確認できないなら出さない。ネットワーク不通は「たぶん合っている」の根拠にならない。
+    violations.push({
+      line: 1,
+      rule: '書誌を確認できなかった',
+      detail: `openBD への問い合わせに失敗（${e.message}）。確認できない以上、公開はブロックする。`,
+    })
+    return
+  }
+
+  isbns.forEach((isbn, i) => {
+    const summary = records[i]?.summary
+    if (!summary) {
+      violations.push({
+        line: 1,
+        rule: '実在しないISBN',
+        detail: `${isbn} は openBD に存在しない。書名・版・出版社を確認し直すこと。`,
+      })
+      return
+    }
+    // 「リファクタリング : 既存のコードを安全に改善する」→ 「リファクタリング」で照合する
+    const main = String(summary.title || '').split(/[:：]/)[0].trim()
+    if (main && !body.includes(main)) {
+      violations.push({
+        line: 1,
+        rule: '本文の書名が書誌と一致しない',
+        detail: `${isbn} の正式書名は「${summary.title}」（${summary.publisher} ${summary.pubdate}）だが、本文に「${main}」が出てこない。邦題を捏造していないか確認すること。`,
+      })
+    }
+  })
+}
+
 function scoreAiSmell(body) {
   const reasons = []
   let score = 0
@@ -258,13 +349,15 @@ let total = 0
 
 for (const file of files) {
   const raw = readFileSync(file, 'utf8')
-  const { body } = stripFrontmatter(raw)
+  const { body, meta } = stripFrontmatter(raw)
   const violations = []
 
   checkPrDisclosure(body, violations, { noteMode })
   checkFalseExperience(body, violations)
   checkLinks(body, violations)
   if (noteMode) checkNoteFormat(body, violations)
+  // note用出力は本文の要約なので、書誌の申告は記事本体（content/）にだけ求める
+  else await checkBibliography(meta, body, violations)
 
   const smell = scoreAiSmell(body)
   if (smell.score >= AI_SMELL_THRESHOLD) {
@@ -292,7 +385,9 @@ for (const file of files) {
 if (total > 0) {
   console.log(`\n${total} 件の違反により公開をブロックしました。`)
   console.log('表現を直してください。このスクリプトの条件を緩めることは職務規程で禁止されています。')
-  process.exit(1)
+  // process.exit() を使わない。openBD への fetch の接続が残った状態で即時終了すると
+  // Windows の Node が libuv のアサーションで落ち、終了コードが違反件数と無関係になる。
+  process.exitCode = 1
+} else {
+  console.log(`\n${files.length} ファイル、違反なし。`)
 }
-
-console.log(`\n${files.length} ファイル、違反なし。`)

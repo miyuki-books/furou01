@@ -19,7 +19,8 @@ const SITE_TAGLINE = '目的から逆算して技術書・ビジネス書を選�
 
 // ---------------------------------------------------------------- frontmatter
 
-function parseFrontmatter(raw) {
+function parseFrontmatter(input) {
+  const raw = input.replace(/^﻿/, '')
   const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/)
   if (!m) return { meta: {}, body: raw }
   const meta = {}
