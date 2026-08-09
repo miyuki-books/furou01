@@ -19,6 +19,8 @@ const SITE_TAGLINE = '目的から逆算して技術書・ビジネス書を選�
 
 // ---------------------------------------------------------------- frontmatter
 
+const unquote = (s) => s.replace(/^["']([\s\S]*)["']$/, '$1').trim()
+
 function parseFrontmatter(input) {
   const raw = input.replace(/^﻿/, '')
   const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/)
@@ -32,8 +34,12 @@ function parseFrontmatter(input) {
       value = value
         .slice(1, -1)
         .split(',')
-        .map((s) => s.trim())
+        .map((s) => unquote(s.trim()))
         .filter(Boolean)
+    } else {
+      // 引用符を外さないと slug が "foo" のままファイル名に入り、
+      // Linux では引用符ごと通ってしまうため壊れたURLで公開される
+      value = unquote(value)
     }
     meta[kv[1]] = value
   }

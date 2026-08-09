@@ -102,6 +102,8 @@ function stripFrontmatter(raw) {
         .split(',')
         .map((s) => s.trim().replace(/^["']|["']$/g, ''))
         .filter(Boolean)
+    } else {
+      value = value.replace(/^["']([\s\S]*)["']$/, '$1').trim()
     }
     meta[kv[1]] = value
   }
