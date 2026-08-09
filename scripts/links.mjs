@@ -77,7 +77,16 @@ try {
     const records = await res.json()
     missing.forEach((isbn, i) => {
       const s = records[i]?.summary
-      if (s) labels[isbn] = { title: s.title, author: s.author || '', publisher: s.publisher || '' }
+      if (s) {
+        labels[isbn] = {
+          title: s.title,
+          author: s.author || '',
+          publisher: s.publisher || '',
+          // 書影。openBD の利用規約により「本を紹介する目的」で無償利用でき、
+          // 許諾も不要。ただしデータの改変は禁止なので、加工せずそのまま表示する。
+          cover: s.cover || '',
+        }
+      }
     })
   }
 } catch (e) {
@@ -90,6 +99,7 @@ for (const isbn of missing) {
     label: labels[isbn]?.title || isbn,
     author: labels[isbn]?.author || '',
     publisher: labels[isbn]?.publisher || '',
+    cover: labels[isbn]?.cover || '',
     addedAt: new Date().toISOString().slice(0, 10),
   }
   console.log(`  + ${isbn}  ${links[isbn].label}`)

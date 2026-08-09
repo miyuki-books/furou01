@@ -80,6 +80,23 @@ ul, ol { padding-left: 1.4rem; }
 .index-list a:hover { text-decoration: underline; }
 .pr { display: inline-block; font-size: .75rem; color: var(--muted);
       border: 1px solid var(--rule); border-radius: 3px; padding: .05rem .45rem; }
+.books { margin-top: 3.5rem; border-top: 1px solid var(--rule); padding-top: 1.5rem; }
+.books h2 { font-size: 1rem; margin: 0 0 1.25rem; }
+.books ul { list-style: none; padding: 0; margin: 0; }
+.books li { display: flex; gap: 1rem; align-items: flex-start;
+            padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+.books li:last-child { border-bottom: 0; }
+.books .cover { flex: 0 0 84px; }
+.books .cover img { width: 84px; height: auto; display: block; border: 1px solid var(--rule); border-radius: 2px; }
+.books .credit a { color: var(--muted); }
+.books .body { flex: 1; min-width: 0; }
+.books .bt { font-weight: 600; line-height: 1.5; }
+.books .bm { color: var(--muted); font-size: .82rem; margin-top: .2rem; }
+.books .buy { display: inline-block; margin-top: .6rem; font-size: .85rem;
+              border: 1px solid var(--link); color: var(--link);
+              border-radius: 5px; padding: .3rem .8rem; text-decoration: none; }
+.books .buy:hover { background: var(--link); color: var(--bg); }
+.books .credit { color: var(--muted); font-size: .75rem; margin-top: 1.5rem; }
 footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rule);
          color: var(--muted); font-size: .8rem; }
 footer a { color: var(--muted); }
@@ -122,7 +139,51 @@ function rewriteGoLinks(html) {
   return html.replace(/href="\/go\/([^"]+)"/g, `href="${base}/go/$1" rel="sponsored nofollow noopener" target="_blank"`)
 }
 
+// frontmatter の books: から、記事末尾の書籍カードを組み立てる。
+//
+// 本文中のリンクはAI社員の書き方次第で入ったり入らなかったりする（実際に0本の記事が出た）。
+// 書誌は frontmatter で必ず申告させているので、そこから機械的に作れば取りこぼしがない。
+// 書影は openBD のもの。利用規約により「本を紹介する目的」で無償・許諾不要、ただし改変禁止。
+function renderBookCards(meta) {
+  const isbns = (Array.isArray(meta.books) ? meta.books : meta.books ? [meta.books] : []).map((s) =>
+    String(s).replace(/[-\s]/g, '')
+  )
+  const items = isbns.map((i) => [i, allLinks[i]]).filter(([, v]) => v)
+  if (items.length === 0) return ''
+
+  const base = config.links.redirectorBase.replace(/\/$/, '')
+  const go = (isbn) => (base && !base.includes('REPLACE-ME') ? `${base}/go/${isbn}` : `/go/${isbn}`)
+
+  return `
+  <section class="books">
+    <h2>この記事で取り上げた本</h2>
+    <ul>
+${items
+  .map(
+    ([isbn, b]) => `      <li>
+        ${
+          b.cover
+            ? `<a class="cover" href="${esc(go(isbn))}" rel="sponsored nofollow noopener" target="_blank"><img src="${esc(b.cover)}" alt="${esc(b.label)}" loading="lazy"></a>`
+            : ''
+        }
+        <div class="body">
+          <div class="bt"><a href="${esc(go(isbn))}" rel="sponsored nofollow noopener" target="_blank">${esc(b.label)}</a></div>
+          <div class="bm">${esc([b.author, b.publisher].filter(Boolean).join(' / '))}</div>
+          <a class="buy" href="${esc(go(isbn))}" rel="sponsored nofollow noopener" target="_blank">楽天ブックスで見る</a>
+        </div>
+      </li>`
+  )
+  .join('\n')}
+    </ul>
+    <p class="credit">書影・書誌データ: openBD ／ 上記リンクは楽天アフィリエイトを利用しています</p>
+  </section>`
+}
+
 mkdirSync(OUT, { recursive: true })
+
+const allLinks = existsSync(join(ROOT, 'state/links.json'))
+  ? JSON.parse(readFileSync(join(ROOT, 'state/links.json'), 'utf8'))
+  : {}
 
 const contentDir = join(ROOT, 'content')
 const files = existsSync(contentDir) ? readdirSync(contentDir).filter((f) => extname(f) === '.md') : []
@@ -157,6 +218,7 @@ for (const file of files) {
     <p class="meta"><time datetime="${esc(date)}">${esc(date)}</time></p>
     ${rendered}
   </article>
+${renderBookCards(meta)}
 </main>`,
   })
 
