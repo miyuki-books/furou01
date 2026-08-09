@@ -71,5 +71,29 @@
     "publisher": "翔泳社",
     "cover": "",
     "addedAt": "2026-08-09"
+  },
+  "9784297142933": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297142933%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Web API設計実践入門──API仕様ファーストによるテスト駆動開発",
+    "author": "柴田芳樹",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-08-09"
+  },
+  "9784839979393": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784839979393%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "APIデザイン・パターン : Web API設計のベストプラクティス集",
+    "author": "Geewax,J.J.(JohnJ.) 松田,晃一,1960-",
+    "publisher": "マイナビ出版",
+    "cover": "",
+    "addedAt": "2026-08-09"
+  },
+  "9784798196336": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798196336%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "セキュアAPI 設計・構築・実装を貫く原則",
+    "author": "JoséHaroPeralta 元内柊也 小栁斉 織茂駿斗 水元恭平",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-08-09"
   }
 }

@@ -1,0 +1,1 @@
+API設計は一度決まると変更コストが劇的に増えます。マイクロサービス時代のバックエンド開発者が押さえるべき、仕様ファースト・アプローチからセキュリティ設計までの3冊。 https://miyuki-books.github.io/furou01/api-design-3books.html
