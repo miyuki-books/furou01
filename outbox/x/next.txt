@@ -1,1 +1,1 @@
-データベース設計とパフォーマンス改善を学びたい方へ。SQL思考法→実装最適化→内部構造の順で、3冊の組み合わせ方を整理しました。それぞれがどのレイヤーを扱うのか、どの順で学べば効果的かをまとめています。 https://miyuki-books.github.io/furou01/database-design-3books.html
+マイクロサービス化、Clean Architecture、ドメイン駆動設計。大規模なシステムを段階的に設計するための3冊を、どう読み合わせるかで紹介しています。サービス分割から内部構造まで、スケーリングの各段階で参照できる選書ガイド。 https://miyuki-books.github.io/furou01/system-design-3books.html

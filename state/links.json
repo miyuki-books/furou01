@@ -41,5 +41,26 @@
     "author": "Thomas,David,1956- Hunt,Andrew,1964- 村上,雅章,1960-",
     "publisher": "オーム社",
     "addedAt": "2026-08-09"
+  },
+  "9784873117607": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784873117607%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "マイクロサービスアーキテクチャ",
+    "author": "Newman,Sam 佐藤,直生,1974- 木下,哲也,1967-",
+    "publisher": "オーム社",
+    "addedAt": "2026-08-09"
+  },
+  "9784049012033": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784049012033%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Clean Architecture 達人に学ぶソフトウェアの構造と設計",
+    "author": "ＲｏｂｅｒｔＣ．Ｍａｒｔｉｎ 角征典 高木正弘",
+    "publisher": "ＫＡＤＯＫＡＷＡ",
+    "addedAt": "2026-08-09"
+  },
+  "9784798121963": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798121963%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "エリック・エヴァンスのドメイン駆動設計 : ソフトウェア開発の実践 : ソフトウェアの核心にある複雑さに立ち向かう",
+    "author": "Evans,Eric,1962- 今関,剛 和智,右桂,1978- 牧野,祐子",
+    "publisher": "翔泳社",
+    "addedAt": "2026-08-09"
   }
 }
