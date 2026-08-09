@@ -150,7 +150,7 @@ function checkFalseExperience(body, violations) {
   }
 }
 
-function checkLinks(body, violations) {
+function checkLinks(body, violations, meta) {
   const allowed = new Set(config.links.allowedAffiliateHosts)
   const urlRe = /https?:\/\/([^\s)\]"'<>]+)/g
   let m
@@ -174,6 +174,23 @@ function checkLinks(body, violations) {
         rule: 'Amazonアソシエイトのタグ付きリンク',
         detail:
           'Amazonアソシエイトは未登録。登録すると180日以内に適格販売3件が必要になるため、登録判断はAI社員が行ってはいけない。',
+      })
+    }
+  }
+
+  // /go/:id の id は ISBN。frontmatter の books: に無い id はリンク切れになる
+  // （scripts/links.mjs が ISBN をキーにして links.json を作るため）。
+  const declared = new Set(
+    (Array.isArray(meta?.books) ? meta.books : meta?.books ? [meta.books] : []).map((s) =>
+      String(s).replace(/[-\s]/g, '')
+    )
+  )
+  for (const m of body.matchAll(/\]\(\/go\/([^)\s]+)\)/g)) {
+    if (!declared.has(m[1])) {
+      violations.push({
+        line: lineOf(body, m.index),
+        rule: '/go/ のIDが書誌に無い',
+        detail: `/go/${m[1]} は frontmatter の books: に無い。リンクのIDは ISBN13 にすること（例: /go/9784274224546）。`,
       })
     }
   }
@@ -356,7 +373,7 @@ for (const file of files) {
 
   checkPrDisclosure(body, violations, { noteMode })
   checkFalseExperience(body, violations)
-  checkLinks(body, violations)
+  checkLinks(body, violations, meta)
   if (noteMode) checkNoteFormat(body, violations)
   // note用出力は本文の要約なので、書誌の申告は記事本体（content/）にだけ求める
   else await checkBibliography(meta, body, violations)
