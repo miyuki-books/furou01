@@ -98,12 +98,12 @@ ${canonical ? `<link rel="canonical" href="${esc(canonical)}">` : ''}
 </head>
 <body>
 <header>
-  <a href="/"><div class="site-name">${SITE_NAME}</div></a>
+  <a href="./"><div class="site-name">${SITE_NAME}</div></a>
   <div class="tagline">${SITE_TAGLINE}</div>
 </header>
 ${body}
 <footer>
-  <p><a href="/about.html">このサイトについて</a></p>
+  <p><a href="./about.html">このサイトについて</a></p>
 </footer>
 </body>
 </html>
@@ -176,7 +176,7 @@ writeFileSync(
 ${articles
   .map(
     (a) => `    <li>
-      <a href="/${esc(a.slug)}.html">${esc(a.title)}</a>
+      <a href="./${esc(a.slug)}.html">${esc(a.title)}</a>
       <div class="meta"><time datetime="${esc(a.date)}">${esc(a.date)}</time></div>
     </li>`
   )
@@ -218,6 +218,22 @@ const linksSrc = join(ROOT, 'state/links.json')
 if (existsSync(linksSrc)) copyFileSync(linksSrc, join(OUT, 'links.json'))
 
 writeFileSync(join(OUT, '.nojekyll'), '', 'utf8')
+
+// GitHub Pages のプロジェクトサイトは /<リポジトリ名>/ の下に置かれる。
+// href="/foo.html" と書くとドメイン直下を指してしまい、全リンクが404になる。
+// 個別ページを直接開くと表示できるので、目視では気づきにくい。
+{
+  const offenders = []
+  for (const name of readdirSync(OUT).filter((f) => f.endsWith('.html'))) {
+    const html = readFileSync(join(OUT, name), 'utf8')
+    for (const m of html.matchAll(/(?:href|src)="(\/[^/][^"]*)"/g)) offenders.push(`${name}: ${m[1]}`)
+  }
+  if (offenders.length) {
+    console.error('内部リンクがドメイン直下を指しています（相対パスにしてください）:')
+    for (const o of offenders) console.error(`  ${o}`)
+    process.exit(1)
+  }
+}
 
 console.log(`${articles.length} 記事を site/ に生成しました。`)
 for (const a of articles) console.log(`  ${a.date}  ${a.slug}.html  ${a.title}`)
