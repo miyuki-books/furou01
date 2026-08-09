@@ -32,6 +32,10 @@ jobs:
       - name: Claude Code をインストール
         run: npm install -g @anthropic-ai/claude-code
 
+      - name: 実行前の記事数を記録
+        id: pre
+        run: echo "count=$(ls content/*.md 2>/dev/null | wc -l)" >> "$GITHUB_OUTPUT"
+
       - name: AI社員を起動（記事生成）
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -49,6 +53,22 @@ jobs:
           echo "halted=$halted" >> "$GITHUB_OUTPUT"
           if [ "$halted" = "true" ]; then
             echo "AI社員が停止条件を検知して停止しました。以降の手順は飛ばします。"
+          fi
+
+      # 何も生まずに ok を記録するのが最悪の失敗の形。成功に見えて気づけない。
+      # AI社員の自己申告ではなく、記事が増えたという事実で判定する。
+      - name: 記事が実際に増えたか検証
+        if: steps.halt.outputs.halted != 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          after=$(ls content/*.md 2>/dev/null | wc -l)
+          before=${{ steps.pre.outputs.count }}
+          echo "記事数 $before → $after"
+          if [ "$after" -le "$before" ]; then
+            node scripts/notify.mjs "日次ジョブ: AI社員が新しい記事を書きませんでした（記事数 $before のまま）。無出力のまま成功扱いになるのを防ぐため失敗させます。"
+            echo "::error::記事が増えていません。"
+            exit 1
           fi
 
       - name: ガードレール（AI社員の申告を信用せず、ここでもう一度通す）
