@@ -100,19 +100,35 @@ jobs:
         with:
           node-version: 20
 
-      - name: X へ投稿
+      # 受け渡しは固定ファイル名。日付を挟むと、ジョブ(UTC)とAI社員(JST)で1日ズレる。
+      - name: X へ投稿し、投稿済みに退避する
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
         run: |
-          file="outbox/x/$(date -u +%Y-%m-%d).txt"
+          file="outbox/x/next.txt"
           if [ ! -f "$file" ]; then
             echo "$file が無いので投稿しません。"
             exit 0
           fi
+
           node scripts/post-x.mjs "$(cat "$file")"
+
+          # 認証情報が未設定のときは post-x.mjs が投稿せず表示だけして終わるので、退避もしない
+          if [ -z "$X_API_KEY" ]; then
+            echo "X の認証情報が未設定のため next.txt は残します。"
+            exit 0
+          fi
+
+          mkdir -p outbox/x
+          git mv "$file" "outbox/x/posted-$(date -u +%Y-%m-%d).txt" 2>/dev/null \
+            || mv "$file" "outbox/x/posted-$(date -u +%Y-%m-%d).txt"
+          git config user.name "ai-staff[bot]"
+          git config user.email "ai-staff@users.noreply.github.com"
+          git add -A outbox/x
+          git diff --staged --quiet || (git commit -m "x: 投稿済みに退避" && git push)
 
   on-failure:
     needs: [generate, deploy, announce]

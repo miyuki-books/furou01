@@ -11,7 +11,8 @@
 
 - `halted` が既に true
 - `consecutiveFailures` が3以上
-- `startedAt` から `experimentDays` 日が経過している
+- `startedAt` が **null 以外**で、そこから `experimentDays` 日が経過している
+  （`startedAt` が null ならセットアップ中なので、**停止せず通常どおり進めてください**）
 - 同じ記事が `blockedArticles` で3回以上ブロックされている
 
 ### 2. 観測する
@@ -64,7 +65,10 @@ node scripts/notify.mjs "本日は記事を出せませんでした: <理由>"
 
 ### 6. X の投稿文を用意する
 
-`outbox/x/YYYY-MM-DD.txt` に1行で書きます。投稿はワークフローが行うので、あなたは書くだけです。
+**`outbox/x/next.txt`** に1行で書きます。ファイル名は固定です（日付を入れないこと。
+ジョブは UTC、あなたの感覚は JST になりがちで、日付を挟むと確実にズレます）。
+
+投稿はワークフローが行い、投稿後に `outbox/x/posted-*.txt` へ退避します。あなたは書くだけです。
 
 - 記事URLは `<siteBase>/<slug>.html`
 - 記事の要点を、宣伝文句ではなく**その記事が誰の役に立つか**が分かる形で書く

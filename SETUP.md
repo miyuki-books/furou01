@@ -75,15 +75,23 @@ claude setup-token
 ## ⑤ Slack の通知先を作る
 
 1. 通知用の **private チャンネル**を1つ作る（例：`#ai-lab-01`。本業のチャンネルには混ぜない）
-2. https://api.slack.com/apps → Create New App → From scratch → ワークスペースを選択
-3. 左メニュー Incoming Webhooks を On → Add New Webhook to Workspace → ①のチャンネルを選択
-4. 発行された `https://hooks.slack.com/services/...` をコピー
+2. https://api.slack.com/apps → **Create New App**
+3. 「Create new app」ダイアログで **Blank app** を選ぶ（旧「From scratch」。
+   上段の AI agent / Starter app はテンプレート入りで、不要な機能とスコープが付いてくる）→ Continue
+4. App Name（例：`furou01-notify`）とワークスペースを選んで **Create App**
+5. 左メニュー **Incoming Webhooks** → 右上のトグルを **On**
+6. ページ最下部の **Add New Webhook to Workspace** → 1. のチャンネルを選んで許可
+7. 発行された `https://hooks.slack.com/services/...` をコピー
 
-GitHub Secrets に登録します。
+GitHub Secrets に登録します。**トークン類は本人が入力し、他者に渡さないこと。**
 
-| Name | Value |
-|---|---|
-| `SLACK_WEBHOOK_URL` | 発行されたURL |
+```bash
+gh secret set SLACK_WEBHOOK_URL --repo <ユーザー名>/furou01
+```
+
+> ワークスペースの設定でアプリのインストールに管理者承認が要る場合があります。
+> 承認を待つのが面倒なら、この実験専用の無料ワークスペースを新規に作るほうが早く、
+> 本業とも完全に分離できます。
 
 > **注意**：このURLを知っている人は誰でもそのチャンネルに投稿できます。実質パスワードとして扱ってください。
 > Slack アプリの作成はワークスペースの管理設定に触れるので、承認が必要な場合があります。
