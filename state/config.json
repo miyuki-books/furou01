@@ -32,7 +32,7 @@
       "hb.afl.rakuten.co.jp",
       "af.moshimo.com"
     ],
-    "redirectorBase": "https://REPLACE-ME.workers.dev",
+    "redirectorBase": "https://furou01-go.miyuki20260809.workers.dev",
     "siteBase": "https://miyuki-books.github.io/furou01"
   },
   "posting": {

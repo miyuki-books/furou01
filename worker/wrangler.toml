@@ -5,11 +5,11 @@ compatibility_date = "2026-01-01"
 # GitHub Pages のURL。links.json をここから読む。
 # SETUP.md の手順で実際のURLに置き換えること。
 [vars]
-SITE_BASE = "https://REPLACE-ME.github.io/furou01"
+SITE_BASE = "https://miyuki-books.github.io/furou01"
 
 # クリック数を保存する KV。
 # 作成: npx wrangler kv namespace create CLICKS
 # 出力された id をここに貼る。
 [[kv_namespaces]]
 binding = "CLICKS"
-id = "REPLACE-ME"
+id = "134b4f3805d04361ba3b4a2934d4dff9"
