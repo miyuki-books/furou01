@@ -59,6 +59,6 @@
     "dailyXPosts": 1,
     "noteKitDayOfWeek": 6
   },
-  "startCommit": "7f26da558c0748df35c7f332105d24180a82eeb4",
+  "startCommit": "c588894dd44d9c1ddfd594d12d33afdbb642aa67",
   "_startCommitNote": "実験開始時点のコミット。中間判定で人間の介入回数を数える基準に使う（日付基準だとタイムゾーンでずれるため）"
 }
