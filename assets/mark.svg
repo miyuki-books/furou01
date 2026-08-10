@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32" role="img" aria-label="本の地図">
+  <rect width="1024" height="1024" rx="180" fill="#8a3324"/>
+  <path d="M512 872 C 468 726 330 528 330 384 a 182 182 0 1 1 364 0 c 0 144 -138 342 -182 488 Z" fill="#fbfaf7"/>
+  <circle cx="512" cy="372" r="84" fill="#8a3324"/>
+  <path d="M155 505 C 322 512 442 646 512 892 C 428 800 272 792 112 804 Z" fill="#fbfaf7"/>
+  <path d="M869 505 C 702 512 582 646 512 892 C 596 800 752 792 912 804 Z" fill="#fbfaf7"/>
+</svg>
