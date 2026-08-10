@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+# 日次と同じ理由でJSTに揃える（decisions.jsonl の date が1日ずれるのを防ぐ）
+env:
+  TZ: Asia/Tokyo
+
 concurrency:
   group: furou01-weekly
   cancel-in-progress: false

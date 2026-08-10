@@ -10,6 +10,12 @@ permissions:
   pages: write
   id-token: write
 
+# ランナーはUTCで動く。日次ジョブは 22:00 UTC = 翌07:00 JST なので、
+# UTCの日付で記事を作ると全部が1日前の日付になり、同じ日付の記事が並んで一覧順も崩れる。
+# 実際に 8/10 に書いた記事が 8/9 付で作られた。ランナーごとJSTに揃える。
+env:
+  TZ: Asia/Tokyo
+
 concurrency:
   group: furou01-daily
   cancel-in-progress: false
