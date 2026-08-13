@@ -143,5 +143,29 @@
     "publisher": "オーム社",
     "cover": "",
     "addedAt": "2026-08-12"
+  },
+  "9784049012040": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784049012040%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Kotlinによる関数型プログラミング入門 関数型ソフトウェア設計の理論と実践",
+    "author": "UbertoBarbini 長澤太郎",
+    "publisher": "ＫＡＤＯＫＡＷＡ",
+    "cover": "",
+    "addedAt": "2026-08-13"
+  },
+  "9784774145167": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784774145167%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "実践F#関数型プログラミング入門",
+    "author": "荒井,省三 いげ太",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-08-13"
+  },
+  "9784274068966": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784274068966%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "関数プログラミング入門 : Haskellで学ぶ原理と技法",
+    "author": "Bird,Richard,1943- 山下,伸夫 オーム社",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-08-13"
   }
 }

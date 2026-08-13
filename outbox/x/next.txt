@@ -1,0 +1,1 @@
+関数型プログラミングの基礎は Haskell で、実務適用は F# / Kotlin で。学習目標と技術スタックに応じた3冊の選び方を紹介。https://miyuki-books.github.io/furou01/functional-programming-3books.html
