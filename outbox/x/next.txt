@@ -1,0 +1,1 @@
+老朽化したコードベースの保守や改善に必要な視点を、3つのアプローチで紹介します。小さな改善から組織的な取り組みまで。 https://miyuki-books.github.io/furou01/legacy-code-3books.html
