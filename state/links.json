@@ -183,5 +183,29 @@
     "publisher": "シーアンドアール研究所",
     "cover": "",
     "addedAt": "2026-08-14"
+  },
+  "9784798165431": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798165431%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "絵で見てわかるマイクロサービスの仕組み",
+    "author": "樽澤,広亨 佐々木,敦守 森山,京平 松井,学 石井,真一 三宅,剛史",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-08-14"
+  },
+  "9784297133269": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297133269%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "AWSで実現するモダンアプリケーション入門 : サーバーレス、コンテナ、マイクロサービスで何ができるのか",
+    "author": "落水,恭介 吉田,慶章",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-08-14"
+  },
+  "9784295018148": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784295018148%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Kubernetesマイクロサービス開発の実践 = A Practical Guide to Microservices Development with Kubernetes : クラウドネイティブアプリケーションを支える技術",
+    "author": "早川,博,pub.2019 北山,晋吾",
+    "publisher": "インプレス",
+    "cover": "",
+    "addedAt": "2026-08-14"
   }
 }

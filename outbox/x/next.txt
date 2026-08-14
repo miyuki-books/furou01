@@ -1,0 +1,1 @@
+モノリスからマイクロサービスへ。段階的に学べる3冊を紹介。理論的な基礎から、クラウド上の実装、Kubernetesでの運用まで。アーキテクチャ選択に迷う開発組織の羅針盤になります。https://miyuki-books.github.io/furou01/microservices-3books.html
