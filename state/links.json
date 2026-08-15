@@ -207,5 +207,29 @@
     "publisher": "インプレス",
     "cover": "",
     "addedAt": "2026-08-14"
+  },
+  "9784297150464": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297150464%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Webセキュリティコンパクトガイド――攻撃の種類から具体的な対策アプローチまで",
+    "author": "佐々木現興 佐々木康介 株式会社ラック 福田俊介 阿部久珠幸 金子春信 松本隆則 水野沙理衣 ほか",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-08-15"
+  },
+  "9784798159164": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798159164%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Webセキュリティ担当者のための脆弱性診断スタートガイド : 上野宣が教える新しい情報漏えいを防ぐ技術",
+    "author": "上野,宣,1975-",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-08-15"
+  },
+  "9784860435394": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784860435394%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "IoT時代のサイバーセキュリティ : 制御システムの脆弱性検知と安全性・堅牢性確保",
+    "author": "制御システムセキュリティセンター",
+    "publisher": "エヌ・ティー・エス",
+    "cover": "",
+    "addedAt": "2026-08-15"
   }
 }
