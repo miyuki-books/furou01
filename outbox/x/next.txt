@@ -1,0 +1,1 @@
+テスト戦略を学べる3冊を紹介しました。基礎から最新動向まで、単なるテストコード記述ではなく「何をテストするか」「どこまでテストするか」の判断が身につきます。 https://miyuki-books.github.io/furou01/testing-strategy-3books.html
