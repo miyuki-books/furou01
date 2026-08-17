@@ -1,0 +1,1 @@
+複雑なビジネスロジックの設計に必要な3つの視点：ドメイン駆動設計、コードの清潔さ、エンジニアとしての判断基準。3冊の組み合わせで段階的に習得できます。https://miyuki-books.github.io/furou01/good-design-3books.html
