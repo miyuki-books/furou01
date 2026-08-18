@@ -1,0 +1,1 @@
+パフォーマンス改善は、実装パターン→アルゴリズム→コンピュータの動作という3層で理解するほうが本番での対応が早くなります。ISUCONの実践知、アルゴリズム設計、コンピュータ基礎を扱う3冊の組み合わせ。 https://miyuki-books.github.io/furou01/performance-optimization-3books.html
