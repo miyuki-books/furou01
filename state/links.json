@@ -287,5 +287,21 @@
     "publisher": "翔泳社",
     "cover": "",
     "addedAt": "2026-08-18"
+  },
+  "9784798131610": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798131610%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "実践ドメイン駆動設計 : エリック・エヴァンスが確立した理論を実際の設計に応用する",
+    "author": "Vernon,Vaughn 高木,正弘",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-08-19"
+  },
+  "9784048931168": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784048931168%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "関数型ドメインモデリング : ドメイン駆動設計とF#でソフトウェアの複雑さに立ち向かおう",
+    "author": "Wlaschin,Scott 猪股,健太郎,1975-",
+    "publisher": "KADOKAWA",
+    "cover": "",
+    "addedAt": "2026-08-19"
   }
 }
