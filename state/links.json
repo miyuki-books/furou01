@@ -303,5 +303,21 @@
     "publisher": "KADOKAWA",
     "cover": "",
     "addedAt": "2026-08-19"
+  },
+  "9784295009795": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784295009795%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Kubernetes完全ガイド : Production-Grade Container Orchestration : クラウドネイティブのキーテクノロジー",
+    "author": "青山,真也",
+    "publisher": "インプレス",
+    "cover": "",
+    "addedAt": "2026-08-20"
+  },
+  "9784297143374": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297143374%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "AWSクラウドネイティブデザインパターン",
+    "author": "林,政利 根本,裕規 吉澤,稔",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-08-20"
   }
 }

@@ -1,0 +1,1 @@
+クラウドネイティブの基盤となるKubernetesの実装理解、AWSでの設計パターン、マイクロサービス開発の具体的な課題まで、段階的に学べる3冊を紹介しました。本番運用で直面する問題を軸に、実践で使える知識が身につきます。 https://miyuki-books.github.io/furou01/cloud-native-3books.html
