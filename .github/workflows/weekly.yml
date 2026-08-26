@@ -2,7 +2,8 @@ name: 週次 振り返りとnote投稿キット
 
 on:
   schedule:
-    - cron: '0 22 * * 5' # 金 22:00 UTC = 土 07:00 JST
+    # 日次(22:00 UTC)と同時刻に走ると push が衝突して落ちるため1時間ずらす
+    - cron: '0 23 * * 5' # 金 23:00 UTC = 土 08:00 JST
   workflow_dispatch:
 
 permissions:
@@ -21,6 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # push が弾かれたときに rebase して押し直すため全履歴が要る
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -60,7 +64,16 @@ jobs:
             echo "変更なし"
           else
             git commit -m "weekly: $(date -u +%Y-%m-%d)"
-            git push
+            # 日次ジョブが先に push していると弾かれる。取り込んで押し直す。
+            for i in 1 2 3; do
+              if git pull --rebase --autostash origin main && git push; then
+                exit 0
+              fi
+              echo "push に失敗しました。再試行します（$i/3）"
+              sleep 10
+            done
+            echo "::error::push が3回失敗しました。週次の成果がコミットされていません。"
+            exit 1
           fi
 
   on-failure:

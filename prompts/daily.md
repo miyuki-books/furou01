@@ -15,6 +15,13 @@
   （`startedAt` が null ならセットアップ中なので、**停止せず通常どおり進めてください**）
 - 同じ記事が `blockedArticles` で3回以上ブロックされている
 
+**`halted` を true にしてよいのは、上の4つに該当したときだけです。**
+`halted` は一方通行のスイッチで、人間が戻すまで以降の日次実行がすべて空振りになります。
+外部API（NDLサーチ・openBD・楽天・stats.json）の一時的な失敗、WebFetch の失敗、
+書誌が確定できなかった、check が通らなかった——**これらはどれも `halted` の理由になりません。**
+その日は `node scripts/notify.mjs` で報告して記事なしで終わり、`halted` は false のままにしてください。
+翌日の実行で再試行すれば足ります。1日落とすのは安いが、止まり続けるのは高い。
+
 ### 2. 観測する
 
 `state/config.json` の `links.redirectorBase` が REPLACE-ME でなければ、
