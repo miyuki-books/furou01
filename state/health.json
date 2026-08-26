@@ -3,8 +3,8 @@
   "lastSuccessfulRun": "2026-08-21",
   "lastRunStatus": "ok",
   "blockedArticles": {},
-  "halted": true,
-  "haltReason": "書誌情報（ISBN）取得失敗: NDL サーチと openBD API が結果を返さない状況。事実誤認による削除を避けるため停止",
+  "halted": false,
+  "haltReason": null,
   "discarded": [
     {
       "file": "content/2026-08-09-test-design-3books.md",
