@@ -1,0 +1,1 @@
+プロダクション運用でシステム全体を観測したい、データの膨張に対応したい方へ。オブザーバビリティ・エンジニアリング、OpenTelemetryの導入、データ管理の3段階を学べる選書ガイドを書きました。https://miyuki-books.github.io/furou01/observability-monitoring-3books.html
