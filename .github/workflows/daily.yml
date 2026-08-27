@@ -2,7 +2,10 @@ name: 日次 記事生成
 
 on:
   schedule:
-    - cron: '0 22 * * *' # 22:00 UTC = 07:00 JST
+    # 毎時0分は GitHub 全体のスケジュールが集中して遅延・取りこぼしが起きやすいので
+    # 分をずらしてある。実際 8/26 の 22:00 UTC 分は Actions 障害で発火しなかった。
+    - cron: '17 22 * * *' # 22:17 UTC = 07:17 JST（本番）
+    - cron: '17 3 * * *'  # 03:17 UTC = 12:17 JST（取りこぼしの追いかけ。済んでいれば即終了する）
   workflow_dispatch:
 
 permissions:
@@ -21,7 +24,32 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # 追いかけ実行が2本目の記事を書いてしまわないための門番。
+  # 「今日(JST)ぶんが既に済んでいるか」だけを見て、済んでいれば以降を全部飛ばす。
+  guard:
+    runs-on: ubuntu-latest
+    outputs:
+      already: ${{ steps.check.outputs.already }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 今日ぶんが済んでいるか確認
+        id: check
+        run: |
+          today=$(date +%F)  # TZ=Asia/Tokyo
+          last=$(node -e "console.log(JSON.parse(require('fs').readFileSync('state/health.json','utf8')).lastSuccessfulRun || '')")
+          # health.json の更新漏れに備えて、今日付の記事の有無も見る
+          if [ "$last" = "$today" ] || ls content/$today-*.md >/dev/null 2>&1; then
+            echo "already=true" >> "$GITHUB_OUTPUT"
+            echo "$today ぶんは実行済みです。何もしません。"
+          else
+            echo "already=false" >> "$GITHUB_OUTPUT"
+            echo "$today ぶんは未実行です。続行します。"
+          fi
+
   generate:
+    needs: guard
+    if: needs.guard.outputs.already != 'true'
     runs-on: ubuntu-latest
     outputs:
       halted: ${{ steps.halt.outputs.halted }}
