@@ -30,9 +30,9 @@
       "note": "操作変数1。週次でのみ変更する"
     },
     "titlePattern": {
-      "current": "目的 + 冊数（例：「設計を学び直したい人向けの3冊」）",
-      "changedAt": null,
-      "note": "操作変数2。週次でのみ変更する"
+      "current": "問いかけ + 冊数（例：「並行処理、何から学ぶ？挫折しないための3冊」）",
+      "changedAt": "2026-08-29",
+      "note": "操作変数2。週次でのみ変更する。2026-08-29に「目的+冊数」から変更（根拠は state/decisions.jsonl の同日エントリ）"
     }
   },
   "expansionThreshold": {
