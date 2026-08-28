@@ -343,5 +343,29 @@
     "publisher": "技術評論社",
     "cover": "",
     "addedAt": "2026-08-27"
+  },
+  "9784798160221": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798160221%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "詳解Rustプログラミング : 開発言語Rustを実践的に使う理解の促進と手法の整理",
+    "author": "McNamara,TimothySamuel 吉川,邦夫,1957-",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-08-28"
+  },
+  "9784295025733": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784295025733%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "現場のGoプログラミング　実プロジェクトで役立つイディオムとテスト",
+    "author": "InancGumus 柴田芳樹",
+    "publisher": "インプレス",
+    "cover": "",
+    "addedAt": "2026-08-28"
+  },
+  "9784798158655": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798158655%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "入門Goプログラミング : シンプルな言語構造、サクサク学んでザクザク作ろう",
+    "author": "Youngman,Nathan Peppé,Roger 吉川,邦夫,1957-",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-08-28"
   }
 }

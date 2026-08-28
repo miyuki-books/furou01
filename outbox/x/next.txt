@@ -1,0 +1,1 @@
+Go と Rust で学ぶ並行処理。言語ごとのパラダイムの違いを知ることで、選択と実装の根拠が変わります。https://miyuki-books.github.io/furou01/concurrency-3books.html
