@@ -391,5 +391,21 @@
     "publisher": "マイナビ出版",
     "cover": "",
     "addedAt": "2026-08-29"
+  },
+  "9784621303252": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784621303252%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Effective Java",
+    "author": "Bloch,Joshua 柴田,芳樹,1959-",
+    "publisher": "丸善出版",
+    "cover": "",
+    "addedAt": "2026-08-30"
+  },
+  "9784814400317": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784814400317%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "ソフトウェア設計のトレードオフと誤り : プログラミングの際により良い選択をするには",
+    "author": "Lelek,Tomasz Skeet,Jon 渋川,よしき 山田,智子,1987- ほか",
+    "publisher": "オーム社 (発売)",
+    "cover": "",
+    "addedAt": "2026-08-30"
   }
 }

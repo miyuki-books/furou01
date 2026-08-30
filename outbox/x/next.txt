@@ -1,0 +1,1 @@
+新しい言語やフレームワークを学ぶなら、何から読むべき？基本的な実装原則、言語仕様の深掘り、設計判断のトレードオフ——学習段階で選ぶ3冊をまとめました。 https://miyuki-books.github.io/furou01/technology-learning-3books.html
