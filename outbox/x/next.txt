@@ -1,0 +1,1 @@
+チーム全体で読む価値のあるコード品質の本。『Clean Code』で原則を学び、『マイクロサービスアーキテクチャ』で設計を、『チームトポロジー』で判断基準を鍛える。段階的にスキルアップするための3冊: https://miyuki-books.github.io/furou01/code-quality-3books.html
