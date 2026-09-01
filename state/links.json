@@ -407,5 +407,21 @@
     "publisher": "オーム社 (発売)",
     "cover": "",
     "addedAt": "2026-08-30"
+  },
+  "9784798172439": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798172439%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "アルゴリズム図鑑 = ALGORITHMS:EXPLAINED AND ILLUSTRATED : 絵で見てわかる33のアルゴリズム",
+    "author": "石田,保輝 宮崎,修一,情報学",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-09-01"
+  },
+  "9784764904064": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784764904064%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "アルゴリズムイントロダクション. 第1巻 (基礎・ソート・データ構造・数学)",
+    "author": "Cormen,ThomasH Leiserson,CharlesEric Rivest,RonaldL ほか",
+    "publisher": "近代科学社",
+    "cover": "",
+    "addedAt": "2026-09-01"
   }
 }
