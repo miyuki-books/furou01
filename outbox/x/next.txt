@@ -1,0 +1,1 @@
+Webアプリケーション開発は、単一の言語では学べません。関数型の思考（Elixir）、フレームワークの構造（Angular）、型による設計（TypeScript）——複数のパラダイムを経験することで、真の設計原則が見えてくる。3つの視点から学ぶフロントエンド基礎 https://miyuki-books.github.io/furou01/web-development-3books.html

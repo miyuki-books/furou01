@@ -423,5 +423,29 @@
     "publisher": "近代科学社",
     "cover": "",
     "addedAt": "2026-09-01"
+  },
+  "9784297140144": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297140144%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Elixir実践入門 : 基本文法、Web開発、機械学習、IoT",
+    "author": "栗林,健太郎 大原,常徳 大聖寺谷,一樹 山内,修 齋藤,和也,エンジニア 隆藤,唯章 ほか",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-09-02"
+  },
+  "9784822254537": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784822254537%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "AngularによるモダンWeb開発 基礎編",
+    "author": "末次,章",
+    "publisher": "日経BPマーケティング",
+    "cover": "",
+    "addedAt": "2026-09-02"
+  },
+  "9784297137397": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297137397%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "かんたん　TypeScript",
+    "author": "HIRO／著",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-09-02"
   }
 }
