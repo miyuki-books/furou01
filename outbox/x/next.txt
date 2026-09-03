@@ -1,0 +1,1 @@
+Gitの基礎から実運用まで、学ぶ段階に応じた3冊を紹介。理論的理解から始める、最新の実践書、チーム開発での課題解決まで。あなたのチームの成熟度に合う1冊が見つかります。https://miyuki-books.github.io/furou01/git-version-control-3books.html
