@@ -471,5 +471,21 @@
     "publisher": "ソーテック社",
     "cover": "",
     "addedAt": "2026-09-03"
+  },
+  "9784873117997": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784873117997%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Effective Debugging : ソフトウェアとシステムをデバッグする66項目",
+    "author": "Spinellis,Diomidis 黒川,利明,1948- 大岩,尚宏",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-09-04"
+  },
+  "9784873115658": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784873115658%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "リーダブルコード : より良いコードを書くためのシンプルで実践的なテクニック",
+    "author": "Boswell,Dustin Foucher,Trevor 角,征典",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-09-04"
   }
 }
