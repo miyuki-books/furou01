@@ -1,0 +1,1 @@
+コードの読みやすさから始まり、セキュリティ設計を経て、大規模アーキテクチャへ。システムがスケールする過程で求められる思考軸が段階的に変わる。その成長段階ごとに役立つ3冊を紹介しました。 https://miyuki-books.github.io/furou01/quality-to-architecture-3books.html
