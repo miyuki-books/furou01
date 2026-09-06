@@ -1,0 +1,1 @@
+コード品質の改善方法は、段階で異なる。基礎理論なら『Clean Code』、モダンな実践なら『アート・オブ・クリーンコード』、すぐに使えるテクニックなら『クリーンコードクックブック』。3冊の役割と選び方を解説しました。 https://miyuki-books.github.io/furou01/clean-code-3books.html
