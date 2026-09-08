@@ -527,5 +527,29 @@
     "publisher": "講談社",
     "cover": "",
     "addedAt": "2026-09-07"
+  },
+  "9784297140557": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297140557%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "イラストでわかるDockerとKubernetes",
+    "author": "徳永,航平,1993-",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-09-08"
+  },
+  "9784798054520": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798054520%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "ITエンジニアになる!チャレンジDocker仮想化環境構築入門",
+    "author": "小島,一也",
+    "publisher": "秀和システム",
+    "cover": "",
+    "addedAt": "2026-09-08"
+  },
+  "9784822286545": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784822286545%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Windows版Docker & Windowsコンテナーテクノロジ入門",
+    "author": "山内,和朗",
+    "publisher": "日経BPマーケティング",
+    "cover": "",
+    "addedAt": "2026-09-08"
   }
 }

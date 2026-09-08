@@ -3,7 +3,7 @@
   "experimentDays": 90,
   "midtermReview": {
     "date": "2026-09-09",
-    "reported": false,
+    "reported": true,
     "note": "30日目の中間判定。主判定（自律性）はこの時点でほぼ答えが出る。90日はボーナス判定（入金）のための上限として残してある",
     "criteria": {
       "maxHumanCommitsPerWeek": 1,
