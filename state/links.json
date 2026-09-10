@@ -551,5 +551,21 @@
     "publisher": "日経BPマーケティング",
     "cover": "",
     "addedAt": "2026-09-08"
+  },
+  "9784295017530": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784295017530%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Go言語100Tips : ありがちなミスを把握し、実装を最適化する",
+    "author": "Harsanyi,Teiva 柴田,芳樹",
+    "publisher": "インプレス",
+    "cover": "",
+    "addedAt": "2026-09-10"
+  },
+  "9784297125196": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297125196%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "エキスパートたちのGo言語 : 一流のコードから応用力を学ぶ",
+    "author": "上田,拓也 青木,太郎 石山,将来 伊藤,雄貴 生沼,一公 鎌田,健史 上川,慶 狩野,達也 ほか",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-09-10"
   }
 }

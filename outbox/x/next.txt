@@ -1,1 +1,1 @@
-Dockerを初めて使う人は、何から学ぶ？イメージとコンテナの違い、開発環境の構築、本番運用。段階別・3冊で解説してます。 https://miyuki-books.github.io/furou01/docker-container-3books.html
+本番システムの障害時に「どう対応するか」が品質を決める。Go・マイクロサービス・分散システムでのエラーハンドリングを、実装の落とし穴から、システムレベルの戦略までの3冊で学ぶ https://miyuki-books.github.io/furou01/error-handling-3books.html
