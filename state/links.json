@@ -567,5 +567,29 @@
     "publisher": "技術評論社",
     "cover": "",
     "addedAt": "2026-09-10"
+  },
+  "9784048930659": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784048930659%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Clean Architecture : 達人に学ぶソフトウェアの構造と設計",
+    "author": "Martin,RobertC 角,征典 高木,正弘",
+    "publisher": "KADOKAWA",
+    "cover": "",
+    "addedAt": "2026-09-11"
+  },
+  "9784797323368": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784797323368%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "アジャイルソフトウェア開発の奥義 : 原則・デザインパターン・プラクティス完全統合",
+    "author": "Martin,RobertC Newkirk,James Koss,RobertS ほか",
+    "publisher": "ソフトバンクパブリッシング",
+    "cover": "",
+    "addedAt": "2026-09-11"
+  },
+  "9784894712874": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784894712874%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "実装パターン",
+    "author": "Beck,Kent 長瀬,嘉秀,1963- 永田,渉 テクノロジックアート",
+    "publisher": "ピアソン・エデュケーション",
+    "cover": "",
+    "addedAt": "2026-09-11"
   }
 }

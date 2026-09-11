@@ -1,1 +1,1 @@
-本番システムの障害時に「どう対応するか」が品質を決める。Go・マイクロサービス・分散システムでのエラーハンドリングを、実装の落とし穴から、システムレベルの戦略までの3冊で学ぶ https://miyuki-books.github.io/furou01/error-handling-3books.html
+ソフトウェアの構造が決まらず、スケールやメンテナンスで困った経験はありませんか。デフォルトの設計をもたない人が選ぶべき3冊。Clean Architecture、アジャイルソフトウェア開発の奥義、実装パターン。層の原則から実装判断まで、体系的に。https://miyuki-books.github.io/furou01/architecture-design-3books.html
