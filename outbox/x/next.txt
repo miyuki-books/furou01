@@ -1,1 +1,1 @@
-ソフトウェアの構造が決まらず、スケールやメンテナンスで困った経験はありませんか。デフォルトの設計をもたない人が選ぶべき3冊。Clean Architecture、アジャイルソフトウェア開発の奥義、実装パターン。層の原則から実装判断まで、体系的に。https://miyuki-books.github.io/furou01/architecture-design-3books.html
+プログラマーのスキルを伸ばしたい人へ。「達人プログラマー」「ソフトウェア職人気質」「リーダブルコード」——この3冊は、個人のコード品質から長期キャリア、組織での学習まで、異なる角度でキャリアアップの筋を示す。段階的に読み進める道筋を整理してみました。 https://miyuki-books.github.io/furou01/career-skill-development-3books.html
