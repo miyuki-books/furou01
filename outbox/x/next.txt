@@ -1,1 +1,1 @@
-プログラマーのスキルを伸ばしたい人へ。「達人プログラマー」「ソフトウェア職人気質」「リーダブルコード」——この3冊は、個人のコード品質から長期キャリア、組織での学習まで、異なる角度でキャリアアップの筋を示す。段階的に読み進める道筋を整理してみました。 https://miyuki-books.github.io/furou01/career-skill-development-3books.html
+テスト駆動開発は「テストファースト」で終わらない。理論から実務までの段階で理解が変わる。基礎書・設計書・最新の実務適用——3冊を段階別に選んだガイド https://miyuki-books.github.io/furou01/test-driven-development-3books.html
