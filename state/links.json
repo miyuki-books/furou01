@@ -631,5 +631,29 @@
     "publisher": "内田老鶴圃",
     "cover": "",
     "addedAt": "2026-09-14"
+  },
+  "9784873117966": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784873117966%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Infrastructure as Code : クラウドにおけるサーバ管理の原則とプラクティス",
+    "author": "Morris,Kief,1968- 宮下,剛輔,1975- 長尾,高弘,1960-",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-09-15"
+  },
+  "9784297147242": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297147242%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "［詳解］AWS Infrastructure as Code――使って比べるTerraform＆AWS CDK",
+    "author": "原旅人",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-09-15"
+  },
+  "9784814400522": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784814400522%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "詳解Terraform : Infrastructure as Codeを実現する",
+    "author": "Brikman,Yevgeniy 松浦,隼人",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-09-15"
   }
 }

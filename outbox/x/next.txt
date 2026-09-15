@@ -1,1 +1,1 @@
-データサイエンスを学ぶなら、どこから始める？実装スキル、統計理論、機械学習の3段階を支える書籍ガイド https://miyuki-books.github.io/furou01/data-science-learning-3books.html
+インフラの手作業から脱却したいなら。Terraform・AWS CDK・原則書の3冊で、何をどの順で学ぶか。選書ガイド → https://miyuki-books.github.io/furou01/infrastructure-as-code-3books.html
