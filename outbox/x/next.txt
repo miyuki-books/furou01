@@ -1,1 +1,1 @@
-ビジネスロジックの複雑さに立ち向かうドメイン駆動設計。理論から実装、関数型プログラミングでの新しいアプローチまで、段階的に学べる3冊の選書ガイド。チーム開発で複雑なシステムを設計する人向け → https://miyuki-books.github.io/furou01/domain-driven-design-3books.html
+複数人でコード開発する際、Gitの操作知識だけでなく、ワークフロー設計とチーム管理が必要になります。基本から実践まで段階別に習得できる3冊を選びました → https://miyuki-books.github.io/furou01/git-version-control-3books.html

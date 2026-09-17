@@ -655,5 +655,21 @@
     "publisher": "オーム社",
     "cover": "",
     "addedAt": "2026-09-15"
+  },
+  "9784798143668": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798143668%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "エンジニアのためのGitの教科書 : 実践で使える!バージョン管理とチーム開発手法",
+    "author": "河村,聖悟 リクルートテクノロジーズ リクルートマーケティングパートナーズ",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-09-17"
+  },
+  "9784798170855": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798170855%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "動かして学ぶ!Git入門 : バージョン管理の基本をしっかり習得",
+    "author": "冨永,和人",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-09-17"
   }
 }
