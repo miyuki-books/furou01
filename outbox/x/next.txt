@@ -1,1 +1,1 @@
-複数人でコード開発する際、Gitの操作知識だけでなく、ワークフロー設計とチーム管理が必要になります。基本から実践まで段階別に習得できる3冊を選びました → https://miyuki-books.github.io/furou01/git-version-control-3books.html
+Go言語は「シンプルさ」が武器。設計思想から本番対応まで、段階的に習得できる3冊を紹介しました。C/C++経験者の転換点にもなり得る言語です。https://miyuki-books.github.io/furou01/go-language-3books.html
