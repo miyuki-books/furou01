@@ -1,1 +1,1 @@
-Go言語は「シンプルさ」が武器。設計思想から本番対応まで、段階的に習得できる3冊を紹介しました。C/C++経験者の転換点にもなり得る言語です。https://miyuki-books.github.io/furou01/go-language-3books.html
+モノリスから分散アーキテクチャへ移行する際、概念理解・実装パターン・本番運用の3段階が必要です。基礎から実装まで、段階的に習得できる3冊を選書ガイドで紹介しました。https://miyuki-books.github.io/furou01/microservices-fundamentals-3books.html
