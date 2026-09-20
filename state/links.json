@@ -687,5 +687,29 @@
     "publisher": "工学社",
     "cover": "",
     "addedAt": "2026-09-18"
+  },
+  "9784814400690": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784814400690%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "入門継続的デリバリー : テストからリリースまでを安全に自動化するソフトウェアデリバリーのプロセス",
+    "author": "Wilson,Christie 渡辺,光一 井上,渉 庄司,祐馬 遠山,雄二",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-09-20"
+  },
+  "9784297141738": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297141738%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "GitHub CI/CD実践ガイド : 持続可能なソフトウェア開発を支えるGitHub Actionsの設計と運用",
+    "author": "野村,友規",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-09-20"
+  },
+  "9784822285357": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784822285357%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "The DevOps 逆転だ! : 究極の継続的デリバリー",
+    "author": "Kim,Gene Behr,Kevin Spafford,George 榊原,彰 長尾,高弘,1960-",
+    "publisher": "日経BPマーケティング",
+    "cover": "",
+    "addedAt": "2026-09-20"
   }
 }

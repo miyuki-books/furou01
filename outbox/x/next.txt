@@ -1,1 +1,1 @@
-モノリスから分散アーキテクチャへ移行する際、概念理解・実装パターン・本番運用の3段階が必要です。基礎から実装まで、段階的に習得できる3冊を選書ガイドで紹介しました。https://miyuki-books.github.io/furou01/microservices-fundamentals-3books.html
+継続的デリバリーに取り組む組織では、経営層・実装者・初心者それぞれが異なる視点を必要とする。導入段階で共通言語を作るために、習熟度別に3冊を選びました。https://miyuki-books.github.io/furou01/cicd-devops-3books.html
