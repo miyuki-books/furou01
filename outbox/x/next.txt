@@ -1,1 +1,1 @@
-Web API開発を進める組織では、初心者・実装者・設計者それぞれが異なる視点を必要とする。段階的な成長を支えるために、レベル別に3冊を選びました。https://miyuki-books.github.io/furou01/api-design-levels-3books.html
+JavaScriptの言語基礎から、フレームワーク選択、テスト戦略まで——フロントエンド開発を深める3つの段階を、役割ごとに紹介した記事を公開しました。自分の立場で何を学ぶべきか、本選びの指針になれば。https://miyuki-books.github.io/furou01/frontend-development-3books.html

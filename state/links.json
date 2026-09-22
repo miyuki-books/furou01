@@ -711,5 +711,29 @@
     "publisher": "日経BPマーケティング",
     "cover": "",
     "addedAt": "2026-09-20"
+  },
+  "9784886477347": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784886477347%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "新しいJavaScriptの教科書",
+    "author": "境,祐司",
+    "publisher": "エスシーシー",
+    "cover": "",
+    "addedAt": "2026-09-22"
+  },
+  "9784297150082": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297150082%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Astro フロントエンド開発の教科書",
+    "author": "WINGSプロジェクト齊藤新三 山田祥寛",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-09-22"
+  },
+  "9784297142209": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297142209%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "［入門］Webフロントエンド E2E テスト――PlaywrightによるWebアプリの自動テストから良いテストの書き方まで",
+    "author": "渋川よしき 武田大輝 枇榔晃裕 木戸俊輔 藤戸四恩 小澤泰河",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-09-22"
   }
 }
