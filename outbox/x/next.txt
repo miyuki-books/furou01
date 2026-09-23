@@ -1,1 +1,1 @@
-JavaScriptの言語基礎から、フレームワーク選択、テスト戦略まで——フロントエンド開発を深める3つの段階を、役割ごとに紹介した記事を公開しました。自分の立場で何を学ぶべきか、本選びの指針になれば。https://miyuki-books.github.io/furou01/frontend-development-3books.html
+サーバーレスは運用負担が減る反面、制約も多い。その制約をどう活かすか、いつ選ぶべきかは立場で違う。初心者の基礎から、実装者の判断、設計者の戦略まで — 3冊で段階的に学べます。https://miyuki-books.github.io/furou01/serverless-development-3books.html

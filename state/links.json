@@ -735,5 +735,29 @@
     "publisher": "技術評論社",
     "cover": "",
     "addedAt": "2026-09-22"
+  },
+  "9784863543140": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784863543140%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "基礎から学ぶサーバーレス開発 = Serverless Development",
+    "author": "青池,利昭 福田,悠海 和田,健一郎",
+    "publisher": "シーアンドアール研究所",
+    "cover": "",
+    "addedAt": "2026-09-23"
+  },
+  "9784065436660": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784065436660%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "AWS Lambda本格入門 : RustとTerraformでつくるサーバーレスシステム",
+    "author": "原,旅人,1975-",
+    "publisher": "講談社",
+    "cover": "",
+    "addedAt": "2026-09-23"
+  },
+  "9784798155166": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798155166%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "AWSによるサーバーレスアーキテクチャ",
+    "author": "Sbarski,Peter 長尾,高弘,1960- 吉田,真吾",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-09-23"
   }
 }
