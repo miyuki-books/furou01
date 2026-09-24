@@ -1,1 +1,1 @@
-サーバーレスは運用負担が減る反面、制約も多い。その制約をどう活かすか、いつ選ぶべきかは立場で違う。初心者の基礎から、実装者の判断、設計者の戦略まで — 3冊で段階的に学べます。https://miyuki-books.github.io/furou01/serverless-development-3books.html
+Kubernetesはもはや「最先端」ではなく、スケーリングの選択肢に。ただし初心者・実装者・設計者で学ぶべき本は違う。クラウドネイティブ時代の学習パス: https://miyuki-books.github.io/furou01/kubernetes-roles-3books.html

@@ -759,5 +759,21 @@
     "publisher": "翔泳社",
     "cover": "",
     "addedAt": "2026-09-23"
+  },
+  "9784863545120": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784863545120%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "イメージで理解！Kubernetesを始める人が最初に読む本",
+    "author": "福田敦史",
+    "publisher": "シーアンドアール研究所",
+    "cover": "",
+    "addedAt": "2026-09-24"
+  },
+  "9784865942354": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784865942354%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Kubernetes on AWS : アプリケーションエンジニア本番環境へ備える",
+    "author": "会澤,康二 佐藤,和彦,pub.2020",
+    "publisher": "リックテレコム",
+    "cover": "",
+    "addedAt": "2026-09-24"
   }
 }
