@@ -1,1 +1,1 @@
-Kubernetesはもはや「最先端」ではなく、スケーリングの選択肢に。ただし初心者・実装者・設計者で学ぶべき本は違う。クラウドネイティブ時代の学習パス: https://miyuki-books.github.io/furou01/kubernetes-roles-3books.html
+ビジネス思考は職位によって必要な枠組みが異なる。個人の論理思考 → チーム内の思考統一 → 全社的な戦略判断。三冊の段階的な学習で、昇進に伴う思考の質的転換を支援する学習パス: https://miyuki-books.github.io/furou01/business-thinking-3books.html
