@@ -799,5 +799,29 @@
     "publisher": "ダイヤモンド社",
     "cover": "",
     "addedAt": "2026-09-25"
+  },
+  "9784274221125": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784274221125%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Rによる機械学習入門",
+    "author": "金森,敬文",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-09-26"
+  },
+  "9784774190624": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784774190624%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "イメージでつかむ機械学習入門 : 豊富なグラフ,シンプルな数学,Rで理解する",
+    "author": "横内,大介,1975- 青木,義充,1974-",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-09-26"
+  },
+  "9784297112097": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297112097%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "AIエンジニアを目指す人のための機械学習入門 : 実装しながらアルゴリズムの流れを学ぶ",
+    "author": "清水,琢也 小川,雄太郎",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-09-26"
   }
 }

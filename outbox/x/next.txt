@@ -1,1 +1,1 @@
-ビジネス思考は職位によって必要な枠組みが異なる。個人の論理思考 → チーム内の思考統一 → 全社的な戦略判断。三冊の段階的な学習で、昇進に伴う思考の質的転換を支援する学習パス: https://miyuki-books.github.io/furou01/business-thinking-3books.html
+機械学習の基礎を習得する際、つまずく初心者が多いのは「理論」「実装」「応用」のいずれかが欠けるから。この3冊は、直感的理解→実装スキル→実務適用という段階を完走できます。自分の目的に合わせて選んでください。 https://miyuki-books.github.io/furou01/machine-learning-beginners-3books.html
