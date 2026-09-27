@@ -823,5 +823,29 @@
     "publisher": "技術評論社",
     "cover": "",
     "addedAt": "2026-09-26"
+  },
+  "9784798045733": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798045733%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "RDB技術者のためのNoSQLガイド",
+    "author": "渡部,徹太郎",
+    "publisher": "秀和システム",
+    "cover": "",
+    "addedAt": "2026-09-27"
+  },
+  "9784339029123": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784339029123%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "実践Pythonによるデータベース入門 = Perfect Practice An Introduction to Database with Python : MySQL,MongoDB,CouchDBの基本操作からアプリプログラミングまで",
+    "author": "藤野,巖",
+    "publisher": "コロナ社",
+    "cover": "",
+    "addedAt": "2026-09-27"
+  },
+  "9784295009771": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784295009771%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Elastic Stack実践ガイド : A Guide to Distributed search,Analytics,and Visualization : データ分析基盤によるログ収集・解析・可視化 Elasticsearch/Kibana編",
+    "author": "惣道,哲也",
+    "publisher": "インプレス",
+    "cover": "",
+    "addedAt": "2026-09-27"
   }
 }

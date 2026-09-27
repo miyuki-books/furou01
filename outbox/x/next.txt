@@ -1,1 +1,1 @@
-機械学習の基礎を習得する際、つまずく初心者が多いのは「理論」「実装」「応用」のいずれかが欠けるから。この3冊は、直感的理解→実装スキル→実務適用という段階を完走できます。自分の目的に合わせて選んでください。 https://miyuki-books.github.io/furou01/machine-learning-beginners-3books.html
+RDB の延長線上では選べないデータベース。NoSQL、検索エンジン、それぞれをどう判断するか。企業責任者から実装エンジニア、データ分析者まで—役割ごとに必要な視点を、3冊で整理する https://miyuki-books.github.io/furou01/database-and-search-3books.html
