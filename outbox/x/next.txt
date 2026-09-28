@@ -1,1 +1,1 @@
-RDB の延長線上では選べないデータベース。NoSQL、検索エンジン、それぞれをどう判断するか。企業責任者から実装エンジニア、データ分析者まで—役割ごとに必要な視点を、3冊で整理する https://miyuki-books.github.io/furou01/database-and-search-3books.html
+分散システムを学ぶなら、誰が・いつ・何を学ぶかが鍵。基本構造、実装パターン、本番運用——段階ごとに最適な3冊を比較しました。 https://miyuki-books.github.io/furou01/distributed-systems-lifecycle.html
