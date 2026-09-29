@@ -847,5 +847,29 @@
     "publisher": "インプレス",
     "cover": "",
     "addedAt": "2026-09-27"
+  },
+  "9784798029184": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798029184%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "俺のコードのどこが悪い? : コードレビューを攻略する40のルール",
+    "author": "藤原,克則",
+    "publisher": "秀和システム",
+    "cover": "",
+    "addedAt": "2026-09-29"
+  },
+  "9784839960230": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784839960230%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "基礎から学ぶチーム開発の成功法則 : チームビルディング、コミュニケーション、ツール活用、コーディング、コードレビュー、デザイン、テスト、継続的インテグレーションまで : 開発現場の教科書",
+    "author": "渡辺,龍司 荻野,博章",
+    "publisher": "マイナビ出版",
+    "cover": "",
+    "addedAt": "2026-09-29"
+  },
+  "9784873113951": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784873113951%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "アート・オブ・アジャイルデベロップメント : 組織を成功に導くエクストリームプログラミング",
+    "author": "Shore,James Warden,Shane 木下,史彦 平鍋,健児 笹井,崇司",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-09-29"
   }
 }

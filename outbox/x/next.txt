@@ -1,1 +1,1 @@
-分散システムを学ぶなら、誰が・いつ・何を学ぶかが鍵。基本構造、実装パターン、本番運用——段階ごとに最適な3冊を比較しました。 https://miyuki-books.github.io/furou01/distributed-systems-lifecycle.html
+コードレビューの実践は、個人の対策だけでなくチーム全体のプロセス設計が必要です。初心者、実装者、アーキテクトで異なる学習が求められます。役割別に選ぶ3冊の本を紹介しました。 https://miyuki-books.github.io/furou01/code-review-roles-3books.html
