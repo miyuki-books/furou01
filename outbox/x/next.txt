@@ -1,1 +1,1 @@
-コードレビューの実践は、個人の対策だけでなくチーム全体のプロセス設計が必要です。初心者、実装者、アーキテクトで異なる学習が求められます。役割別に選ぶ3冊の本を紹介しました。 https://miyuki-books.github.io/furou01/code-review-roles-3books.html
+遅いSQLの原因を体系的に理解するには、インデックス設計から実行計画まで、基礎を整える必要があります。古い本でも大丈夫。データベースの原理は変わりません。https://miyuki-books.github.io/furou01/sql-query-optimization-3books.html

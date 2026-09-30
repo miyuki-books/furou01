@@ -871,5 +871,29 @@
     "publisher": "オーム社",
     "cover": "",
     "addedAt": "2026-09-29"
+  },
+  "9784798120669": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798120669%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "基礎から学ぶOracle SQLチューニング",
+    "author": "加藤,祥平 中島,益次郎",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-09-30"
+  },
+  "9784798125381": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798125381%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Oracle SQLチューニング : パフォーマンス改善と事前対策に役立つ : 本気で学ぶ実践的な考え方とテクニック",
+    "author": "加藤,祥平 中島,益次郎",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-09-30"
+  },
+  "9784798153995": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798153995%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Effective SQL : RDBMSのパフォーマンスを最大限引き出す61の手法と思考",
+    "author": "Viescas,JohnL.,1947- Steele,DouglasJ Clothier,Ben ほか",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-09-30"
   }
 }
