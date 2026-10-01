@@ -1,1 +1,1 @@
-遅いSQLの原因を体系的に理解するには、インデックス設計から実行計画まで、基礎を整える必要があります。古い本でも大丈夫。データベースの原理は変わりません。https://miyuki-books.github.io/furou01/sql-query-optimization-3books.html
+コード品質は個人の心掛けだけでは成立しません。基礎を学び、チームで検証し、組織で支える——この三層の仕組みが必要です。初心者向けの基本、実装チームのテスト戦略、組織設計の観点から学ぶ3冊。 https://miyuki-books.github.io/furou01/code-quality-team-roles.html
