@@ -1,1 +1,2 @@
-コード品質は個人の心掛けだけでは成立しません。基礎を学び、チームで検証し、組織で支える——この三層の仕組みが必要です。初心者向けの基本、実装チームのテスト戦略、組織設計の観点から学ぶ3冊。 https://miyuki-books.github.io/furou01/code-quality-team-roles.html
+TypeScriptで型システムを味方にできる人と、型チェックが邪魔と感じる人の差は、型の設計思想を理解しているかどうか。理論→実装→現場の3層で学ぶことで、どの段階でも「なぜこう設計するのか」を判断できるようになる。自分のレベルに合わせて選べる3冊
+https://miyuki-books.github.io/furou01/typescript-learning-3books.html

@@ -895,5 +895,21 @@
     "publisher": "翔泳社",
     "cover": "",
     "addedAt": "2026-09-30"
+  },
+  "9784814401093": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784814401093%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Effective TypeScript（第2版） : 型システムの力を最大限に引き出す83項目",
+    "author": "DanVanderkam 今村謙士",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-10-02"
+  },
+  "9784839984274": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784839984274%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "現場で使えるTypeScript詳解実践ガイド",
+    "author": "菅原,浩之,1987- 外村,将大,1987-",
+    "publisher": "マイナビ出版",
+    "cover": "",
+    "addedAt": "2026-10-02"
   }
 }
