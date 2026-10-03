@@ -1,2 +1,2 @@
-TypeScriptで型システムを味方にできる人と、型チェックが邪魔と感じる人の差は、型の設計思想を理解しているかどうか。理論→実装→現場の3層で学ぶことで、どの段階でも「なぜこう設計するのか」を判断できるようになる。自分のレベルに合わせて選べる3冊
-https://miyuki-books.github.io/furou01/typescript-learning-3books.html
+既存コードの改善は「危険に対処する知識」「設計の方向性」「信頼できるテスト」の3つの視点が必要。テストなく複雑に絡み合ったレガシーコードを、着実に改善するための実装者向け3冊を紹介します。
+https://miyuki-books.github.io/furou01/legacy-code-improvement-3books.html
