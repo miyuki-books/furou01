@@ -919,5 +919,21 @@
     "publisher": "技術評論社",
     "cover": "",
     "addedAt": "2026-10-03"
+  },
+  "9784873116860": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784873116860%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Web API:The Good Parts",
+    "author": "水野,貴明,1973-",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-10-04"
+  },
+  "9784798167015": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784798167015%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Web APIの設計 : ユーザブルでセキュア、効率的で進化可能なWeb APIをデザインする際に知っておくべきこと",
+    "author": "Lauret,Arnaud クイープ",
+    "publisher": "翔泳社",
+    "cover": "",
+    "addedAt": "2026-10-04"
   }
 }
