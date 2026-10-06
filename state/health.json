@@ -1,10 +1,10 @@
 {
-  "consecutiveFailures": 2,
+  "consecutiveFailures": 3,
   "lastSuccessfulRun": "2026-10-04",
   "lastRunStatus": "failed",
   "blockedArticles": {},
-  "halted": false,
-  "haltReason": null,
+  "halted": true,
+  "haltReason": "連続3回の実行失敗",
   "discarded": [
     {
       "file": "content/2026-08-09-test-design-3books.md",
