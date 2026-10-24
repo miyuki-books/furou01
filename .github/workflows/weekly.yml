@@ -36,6 +36,20 @@ jobs:
       - name: Claude Code をインストール
         run: npm install -g @anthropic-ai/claude-code
 
+      # 日次と同じく、停止中に緑で終わると止まっていることに気づけない。
+      # AI社員を呼ぶ前に落とす。
+      - name: 既に停止中でないか確認
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          halted=$(node -e "console.log(JSON.parse(require('fs').readFileSync('state/health.json','utf8')).halted === true)")
+          if [ "$halted" = "true" ]; then
+            reason=$(node -e "console.log(JSON.parse(require('fs').readFileSync('state/health.json','utf8')).haltReason || '不明')")
+            node scripts/notify.mjs "週次ジョブ: 停止中のため何もしていません（理由: $reason）。再開には halted の解除が要ります。"
+            echo "::error::halted: true のため停止中です（理由: $reason）"
+            exit 1
+          fi
+
       - name: AI社員を起動（振り返りと戦略更新）
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}

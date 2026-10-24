@@ -57,6 +57,8 @@
   "posting": {
     "dailyArticles": 1,
     "dailyXPosts": 1,
+    "xEnabled": false,
+    "_xEnabledNote": "2026-10-24、X API のクレジット枯渇(402 credits depleted)により人間が停止。課金判断は人間マターなので、AI社員はこのフラグを true に戻してはいけない",
     "noteKitDayOfWeek": 6
   },
   "startCommit": "c588894dd44d9c1ddfd594d12d33afdbb642aa67",
