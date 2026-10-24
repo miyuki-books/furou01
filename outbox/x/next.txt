@@ -1,2 +1,2 @@
-REST API設計の学習は、習熟度で本を変える。入門向けに「Good Parts」の基礎知識から実装の「実践入門」、設計思想の「Web APIの設計」へと段階を踏む。レベル別3冊の役割と選び方を解説しました。
-https://miyuki-books.github.io/furou01/api-design-3books.html
+Pythonでデータ分析を始めるなら、統計基礎 → 実務的なパイプライン → 発展的アルゴリズムの順が効果的。3冊の役割分担で理論と実装が実感できます。
+https://miyuki-books.github.io/furou01/data-science-python-3books.html

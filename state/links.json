@@ -935,5 +935,29 @@
     "publisher": "翔泳社",
     "cover": "",
     "addedAt": "2026-10-04"
+  },
+  "9784297120221": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297120221%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "RとPythonで学ぶ実践的データサイエンス&機械学習",
+    "author": "有賀,友紀 大橋,俊介,pub.2019",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-10-24"
+  },
+  "9784585240112": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784585240112%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "R・Pythonによる統計データ科学",
+    "author": "杉山,高一 藤越,康祝,1942-",
+    "publisher": "勉誠出版",
+    "cover": "",
+    "addedAt": "2026-10-24"
+  },
+  "9784297115159": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297115159%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "ITエンジニアのための強化学習理論入門 = Reinforcement Learning for Software Engineers : Pythonで学ぶアルゴリズムの動作原理",
+    "author": "中井,悦司",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-10-24"
   }
 }
