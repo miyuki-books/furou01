@@ -218,6 +218,8 @@ jobs:
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           enabled=$(node -e "const c=JSON.parse(require('fs').readFileSync('state/config.json','utf8'));console.log((c.posting||{}).xEnabled !== false)")
           if [ "$enabled" != "true" ]; then
@@ -231,7 +233,15 @@ jobs:
             exit 0
           fi
 
-          node scripts/post-x.mjs "$(cat "$file")"
+          # X の投稿失敗で日次ラン全体を落とさない。記事の生成も公開もここまでで済んでいる。
+          # 2026-09-08 にクレジットが枯渇したあと、ここの赤が46日ぶん積み上がって
+          # halted に入り、記事が書けていた日まで巻き込んで止まった。同じ轍は踏まない。
+          # ただし黙って緑にはしない。Slack に出し、連続回数を health.json に残す。
+          if node scripts/post-x.mjs "$(cat "$file")"; then
+            posted=true
+          else
+            posted=false
+          fi
 
           # 認証情報が未設定のときは post-x.mjs が投稿せず表示だけして終わるので、退避もしない
           if [ -z "$X_API_KEY" ]; then
@@ -239,22 +249,50 @@ jobs:
             exit 0
           fi
 
-          mkdir -p outbox/x
-          git mv "$file" "outbox/x/posted-$(date -u +%Y-%m-%d).txt" 2>/dev/null \
-            || mv "$file" "outbox/x/posted-$(date -u +%Y-%m-%d).txt"
           git config user.name "ai-staff[bot]"
           git config user.email "ai-staff@users.noreply.github.com"
-          git add -A outbox/x
-          if ! git diff --staged --quiet; then
-            git commit -m "x: 投稿済みに退避"
-            for i in 1 2 3; do
-              if git pull --rebase --autostash origin main && git push; then
-                break
-              fi
-              echo "push に失敗しました。再試行します（$i/3）"
-              sleep 10
-            done
+
+          POSTED="$posted" node -e "
+            const fs = require('fs');
+            const h = JSON.parse(fs.readFileSync('state/health.json','utf8'));
+            if (process.env.POSTED === 'true') {
+              h.xConsecutiveFailures = 0;
+              delete h.xLastError;
+            } else {
+              h.xConsecutiveFailures = (h.xConsecutiveFailures || 0) + 1;
+              h.xLastError = new Date().toISOString();
+            }
+            fs.writeFileSync('state/health.json', JSON.stringify(h, null, 2) + '\n');
+          "
+          n=$(node -e "console.log(JSON.parse(require('fs').readFileSync('state/health.json','utf8')).xConsecutiveFailures || 0)")
+
+          if [ "$posted" = "true" ]; then
+            mkdir -p outbox/x
+            git mv "$file" "outbox/x/posted-$(date -u +%Y-%m-%d).txt" 2>/dev/null \
+              || mv "$file" "outbox/x/posted-$(date -u +%Y-%m-%d).txt"
+            msg="x: 投稿済みに退避"
+          else
+            node scripts/notify.mjs "日次ジョブ: X への投稿に失敗しました（$n 回連続）。記事の生成と公開は成功しているので、日次ランは落としません。next.txt は明日の実行で上書きされます: $RUN_URL"
+            echo "::warning::X への投稿に失敗しました（$n 回連続）。日次ランは落としません。"
+            msg="x: 投稿失敗を記録（$n 回連続）"
           fi
+
+          git add -A outbox/x state/health.json
+          if git diff --staged --quiet; then
+            echo "記録する変更なし"
+            exit 0
+          fi
+          git commit -m "$msg"
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin main && git push; then
+              exit 0
+            fi
+            echo "push に失敗しました。再試行します（$i/3）"
+            sleep 10
+          done
+          # ここで赤にすると X の失敗を切り離した意味が無くなるので、通知だけ出して成功させる
+          node scripts/notify.mjs "日次ジョブ: X の結果を push できませんでした。xConsecutiveFailures が記録されていません: $RUN_URL"
+          echo "::warning::X の結果を push できませんでした。"
 
   on-failure:
     needs: [generate, deploy, announce]
