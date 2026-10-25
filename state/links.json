@@ -959,5 +959,29 @@
     "publisher": "技術評論社",
     "cover": "",
     "addedAt": "2026-10-24"
+  },
+  "9784295020660": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784295020660%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Go言語で学ぶ並行プログラミング : 他言語にも適用できる原則とベストプラクティス",
+    "author": "Cutajar,James 柴田,芳樹,1959-",
+    "publisher": "インプレス",
+    "cover": "",
+    "addedAt": "2026-10-25"
+  },
+  "9784873118468": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784873118468%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Go言語による並行処理",
+    "author": "Cox-Buday,Katherine 山口,能迪",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-10-25"
+  },
+  "9784297157760": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297157760%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Python Web開発実践入門 ―― FastAPIによるWeb API開発と非同期処理",
+    "author": "陶山嶺",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-10-25"
   }
 }

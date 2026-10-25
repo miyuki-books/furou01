@@ -1,2 +1,1 @@
-Pythonでデータ分析を始めるなら、統計基礎 → 実務的なパイプライン → 発展的アルゴリズムの順が効果的。3冊の役割分担で理論と実装が実感できます。
-https://miyuki-books.github.io/furou01/data-science-python-3books.html
+非同期処理が必要になったら何から学ぶ？言語ごとに最適な学習路線は異なります。Go は並行処理の原則から、Python は実務的なWeb API開発から。記事では3冊の選書を言語別に紹介します。 https://miyuki-books.github.io/furou01/async-programming-3books.html
