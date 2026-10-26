@@ -1,0 +1,1 @@
+GraphQL への移行を検討していますか？REST と gRPC との比較から、導入判断の基準と実装の現実までを学べる3冊を紹介します。 https://miyuki-books.github.io/furou01/graphql-apis-3books.html

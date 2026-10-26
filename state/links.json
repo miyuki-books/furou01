@@ -983,5 +983,29 @@
     "publisher": "技術評論社",
     "cover": "",
     "addedAt": "2026-10-25"
+  },
+  "9784873118932": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784873118932%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "初めてのGraphQL : Webサービスを作って学ぶ新世代API",
+    "author": "Porcello,Eve Banks,Alex 尾崎,沙耶 あんどう,やすし",
+    "publisher": "オーム社",
+    "cover": "",
+    "addedAt": "2026-10-26"
+  },
+  "9784297150624": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784297150624%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Web API開発実践ガイド――REST/gRPC/GraphQLからテスト、セキュリティまで",
+    "author": "杉本和也 津郷晶也 太田佳敬 武田大輝 宮崎将太 福岡秀一郎 武上将樹 渋川よしき ほか",
+    "publisher": "技術評論社",
+    "cover": "",
+    "addedAt": "2026-10-26"
+  },
+  "9784839987954": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784839987954%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "作りながら学ぶWebプログラミング実践入門 改訂版",
+    "author": "掌田津耶乃",
+    "publisher": "マイナビ出版",
+    "cover": "",
+    "addedAt": "2026-10-26"
   }
 }
