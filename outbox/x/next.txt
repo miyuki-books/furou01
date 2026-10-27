@@ -1,0 +1,1 @@
+RDB が遅い → NoSQL へ移行？その前に、SQL の思考方法を確認してください。実は設計とチューニングで解決できることがほとんど。データベース選定を失敗させない3冊。 https://miyuki-books.github.io/furou01/database-selection-migration-3books.html
