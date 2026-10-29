@@ -14,6 +14,5 @@
   ],
   "resumedAt": "2026-10-24",
   "_resumedNote": "2026-10-24 人間が再開。停止の原因は X API のクレジット枯渇(9/8〜)と、on-failure の push が rebase 無しで弾かれ失敗カウンタが remote に残らなかったこと。両方を修正し X 投稿は停止した",
-  "xConsecutiveFailures": 1,
-  "xLastError": "2026-10-28T01:27:46.611Z"
+  "xConsecutiveFailures": 0
 }
