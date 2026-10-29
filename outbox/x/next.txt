@@ -1,1 +1,1 @@
-6ヶ月前に書いたコード、何をしているか分からない。バグを直そうとしたら、影響がどこまで及ぶか見えない。それは品質の問題ではなく、読みやすさの問題です。Clean Code、リファクタリング、レガシーコード改善——3冊で「書く段階」から「古いコードとの付き合い方」まで学べます。 https://miyuki-books.github.io/furou01/code-maintainability-3books.html
+マイクロサービスやスケーラブルシステムでイベント駆動に進みたい人へ。Kafkaでメッセージング基盤、RxJavaで非同期パターン、関数型リアクティブプログラミングで理論の背景を学べば、階層ごとの実装判断が明確になります。3冊の役割分けと学習順序をまとめました。https://miyuki-books.github.io/furou01/event-driven-reactive-3books.html
