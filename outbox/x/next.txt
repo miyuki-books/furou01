@@ -1,0 +1,1 @@
+プロジェクトが進むと「テストどこまでやる？」という判断に詰まります。入門から実践、AIを活用した最適化まで、段階的に学べる3冊をまとめました。テスト体系を整理したい人へ。https://miyuki-books.github.io/furou01/software-testing-strategy-3books.html
