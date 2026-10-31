@@ -1,0 +1,1 @@
+Rust でシステムを作る時の最初の課題は、何を学ぶかです。基礎の入門書、実務のパターン集、パフォーマンスの専門書──3冊の役割分けと、あなたの目的に合わせた読む順を整理しました。https://miyuki-books.github.io/furou01/rust-system-development-3books.html
