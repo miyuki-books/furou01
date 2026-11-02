@@ -1,0 +1,1 @@
+サービス成長で構造が崩壊するのは、最初の設計が「今の規模向け」だから。Clean Architecture・ドメイン駆動設計・API仕様ファースト。この3冊の学習順序でスケーラブルな思考が身につく。 https://miyuki-books.github.io/furou01/api-architecture-design-3books.html
