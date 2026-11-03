@@ -1079,5 +1079,29 @@
     "publisher": "イースト・プレス",
     "cover": "",
     "addedAt": "2026-11-01"
+  },
+  "9784822211943": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784822211943%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "ITアーキテクトのためのクラウド設計・構築実践ガイド",
+    "author": "",
+    "publisher": "日経BPマーケティング",
+    "cover": "",
+    "addedAt": "2026-11-03"
+  },
+  "9784296208609": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784296208609%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "Azureクラウド設計完全ガイド : 最適なサービスを選定して組み合わせる",
+    "author": "アクセンチュア株式会社",
+    "publisher": "日経BPマーケティング",
+    "cover": "",
+    "addedAt": "2026-11-03"
+  },
+  "9784296206704": {
+    "url": "https://hb.afl.rakuten.co.jp/hgc/114539e4.67b666c8.114539e5.5f800e0e/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Fsearch%3Fsitem%3D9784296206704%26g%3D001&link_type=hybrid_url&ut=eyJwYWdlIjoidXJsIiwidHlwZSI6Imh5YnJpZF91cmwiLCJjb2wiOjF9",
+    "label": "最適なサービスを選定して組み合わせるAWSクラウド設計完全ガイド",
+    "author": "アクセンチュア株式会社",
+    "publisher": "日経BPマーケティング",
+    "cover": "",
+    "addedAt": "2026-11-03"
   }
 }

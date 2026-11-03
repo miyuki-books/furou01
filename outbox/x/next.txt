@@ -1,0 +1,1 @@
+複数のクラウド環境で一貫性のある設計を進めたい人へ。AWS、Azure、各プラットフォーム上での原則と実装ガイドを紹介。プラットフォーム固有のサービス選択に迷ったときの判定基準が学べます。 https://miyuki-books.github.io/furou01/cloud-architecture-design-3books.html
