@@ -1,0 +1,1 @@
+コードの「なぜ」が見えるようになる。実装パターン → デザインパターン → 言語実装の3冊で、細部から全体構造へ。同じコードでも読み方が変わる。https://miyuki-books.github.io/furou01/patterns-implementation-3books.html
