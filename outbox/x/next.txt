@@ -1,0 +1,2 @@
+マイクロサービスが落ちた時、どこを見ればいい？複数サービスの連携でエラーが複雑になる中、根本原因を素早く特定する方法と、アーキテクチャレベルでの信頼性設計を3冊で整理しました。
+https://miyuki-books.github.io/furou01/distributed-error-response-3books.html
