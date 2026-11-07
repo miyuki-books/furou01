@@ -1,0 +1,1 @@
+エンジニアがコードを書く判断の多くは「技術的に正しいか」に重きを置く。だが、プロダクト成功は「ユーザー課題を理解しているか」という層で決まる。プロダクト思考でものづくりを設計する3冊。https://miyuki-books.github.io/furou01/product-management-3books.html
